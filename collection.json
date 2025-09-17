@@ -1,0 +1,1203 @@
+[
+    {
+        "id": "_meta",
+        "name": "Fragments' Insanity",
+        "author": "Wandering Fragments",
+        "almanac": "https://quorglepleegjr.github.io/"
+    },
+    {
+        "id": "fr_insan_intuitor",
+        "name": "Intuitor",
+        "team": "townsfolk",
+        "ability": "Each night, learn the character (on or off script) that would help your team the most.",
+        "preceedingFirstNightId": "highpriestess",
+        "preceedingOtherNightId": "highpriestess",
+        "firstNight": 68.5,
+        "otherNight": 89.5,
+        "firstNightReminder": "Show the Intuitor the character that would help their team the most.",
+        "flavor": "Behind every great idea, behind every good thought, is intuition. Hone that, and maybe you too can think the right way.",
+        "hook": "The Intuitor learns the most useful characters to their team, whether in play or not, or even on script or not.",
+        "howtorun": "Each night, wake the Intuitor, and show them the character token for the character you think would be most useful for their team.",
+        "examples": [
+            "The Intuitor learns Chef: Multiple evil characters are next to eachother.",
+            "The Intuitor learns Barista: Critical good players are currently poisoned.",
+            "The Intuitor learns Heretic: Good is on the brink of losing."
+        ]
+    },
+    {
+        "id": "fr_insan_priest",
+        "name": "Priest",
+        "team": "townsfolk",
+        "ability": "Each night*, choose a player: if the Demon, you die. One good player registers as the Demon to your ability.",
+        "reminders": [
+            "Sinner"
+        ],
+        "preceedingOtherNightId": "acrobat",
+        "otherNight": 19.5,
+        "otherNightReminder": " The Priest points at another player.",
+        "flavor": "Back, foul demon, BACK!",
+        "hook": "The Priest dies if they encounter the Demon, or a specific good player.",
+        "summary": [
+            "There is always a good player that registers as the Demon, even if the original one changes alignment."
+        ],
+        "howtorun": "On the first night, decide a good player to register incorrectly to the Priest - mark them \"Sinner\". Each night besides the first, wake the Priest, and have them choose a player. If that player is the Demon, or the player marked \"Sinner\", the Priest dies.",
+        "examples": [
+            "The Priest chooses the Po: they die.",
+            "The Priest chooses the Chambermaid: nothing happens.",
+            "The Priest chooses the Saint, who has been elected the Priest's Sinner: the Priest dies."
+        ]
+    },
+    {
+        "id": "fr_insan_disruptor",
+        "name": "Disruptor",
+        "team": "townsfolk",
+        "ability": "Executions fail if no Townsfolk voted. Evils know you are in play. [+0 or +1 Outsider]",
+        "reminders": [
+            "Townsfolk Voted",
+            "About to Die"
+        ],
+        "setup": true,
+        "preceedingFirstNightId": "poppygrower",
+        "firstNight": 11.5,
+        "firstNightReminder": "Evils learn the Disruptor is in play",
+        "flavor": "Nobody said it was *wrong* to sabotage things.",
+        "hook": "The Disruptor forces Townsfolk to have the say by failing nominations with no Townsfolk votes.",
+        "summary": [
+            "Failed nominations have 0 votes.",
+            "All evil players know that the Disruptor is in play, even if they aren't Minions or Demons.",
+            "The Disruptor might add an Outsider, replacing a Townsfolk."
+        ],
+        "howtorun": "On the first night, wake each evil player. Show them the \"This character chose you\" card, then the Disruptor token. Each nomination, if a Townsfolk voted, mark the Disruptor \"Townsfolk Voted\". When tallied, if the Disruptor is not marked \"Townsfolk Voted\", announce the player as about to die, but secretly they are not (the vote count is 0): mark the previous player \"About to Die\", to remember. At the end of the day, execute the player who was about to die.",
+        "examples": [
+            "The High Priestess, Recluse, and Yaggababble voted. The vote count is 3, as normal, and at the end of the day, the nominee is executed.",
+            "Only the Saint, Scarlet Woman, and Evil Twin voted on a nomination. The vote count is 0, but is announced as 3. At the end of the day, another player is about to die, so they are executed as normal.",
+            "Both Outsiders, all 3 Minions, and the Demon are the only voters on a nomination. The vote count is 0, but is announced as 6. At the end of the day, that player would be about to die, so the previous about to die player is executed instead."
+        ]
+    },
+    {
+        "id": "fr_insan_groundskeeper",
+        "name": "Groundskeeper",
+        "team": "townsfolk",
+        "ability": "If only evils live, they lose, even if you are dead.",
+        "flavor": "If none remain to tend the yard, it shall surely fall to ruin.",
+        "hook": "The Groundskeeper forces evil to kill their own before the end of the game.",
+        "summary": [
+            "If at any point there are only evil players alive, good wins instantly."
+        ],
+        "howtorun": "If the Groundskeeper is in play, and all living players are evil, good wins. Declare this and wrap up the game.",
+        "examples": [
+            "The Imp kills the Undertaker, the last alive good player. Good wins.",
+            "Only the Witch, Po, Evil Ogre, and the Evil Gnome live. Good wins."
+        ]
+    },
+    {
+        "id": "fr_insan_satanist",
+        "name": "Satanist",
+        "team": "townsfolk",
+        "ability": "Each night*, a player might die. You & Minions think you are (and you have the ability of) an evil Minion. You are \"the Demon\". [+1 Minion, No Demon]",
+        "jinxes": [
+            {
+                "id": "magician",
+                "reason": "The Satanist and Minions think the Magician is a Minion instead."
+            },
+            {
+                "id": "spy",
+                "reason": "The Satanist registers as the Minion they saw to the Spy."
+            },
+            {
+                "id": "widow",
+                "reason": "The Satanist registers as the Minion they saw to the Widow."
+            }
+        ],
+        "remindersGlobal": [
+            "Is the Satanist"
+        ],
+        "flavor": "In the forgotten corners, in the darkest nooks, so does live the evil amongst us.",
+        "hook": "The Satanist makes 2 players who think they are a Minion, but adds paranoia to one being secretly good.",
+        "summary": [
+            "If the Satanist is in play, the Demon and Satanist tokens are replaced with Minions.",
+            "The Satanist still registers as a good Townsfolk to abilities.",
+            "If the Satanist dies, good wins (including them)."
+        ],
+        "howtorun": "During setup, replace the Demon and the Satanist tokens with Minions. Mark one of the Minions \"Is the Satanist\" - they are \"The Demon\", and secretly good.<br>During the Minion info phase, show the Satanist as a Minion, and show the Satanist token instead of a Demon.<br> Each night besides the first, choose a player to kill (or not to kill).",
+        "examples": [
+            "In a 15 player game, 5 players think they are MInions, and have no Demon.",
+            "In a 9 player game, 3 players think they are Minions. The Poisoner is secretly the Satanist, and when they die, good wins (including them)."
+        ]
+    },
+    {
+        "id": "fr_insan_blackout",
+        "name": "Blackout",
+        "team": "outsider",
+        "ability": "An alive good player is drunk, even if you are dead. Each day, guess who it is: if right, you learn a true statement & are drunk until dawn.",
+        "reminders": [
+            "Drunk",
+            "Correct"
+        ],
+        "flavor": "Lot o' good that Soldier trainin' did ya! *I'm drunk!*",
+        "hook": "The Blackout causes an alive good player to be drunk. However, each day they can guess it, they learn a true fact.",
+        "summary": [
+            "The Blackout means a good player is drunk, even if the Blackout is themselves dead.",
+            "If the drunk player dies, an alive good player becomes drunk instead.",
+            "Each day, the Blackout can guess who is drunk - if right, they learn a true statement, and are then drunk until dawn.",
+            "The Blackout cannot guess whilst dead, but still makes a player drunk."
+        ],
+        "howtorun": "On the first night, choose a good player to be drunk - mark them \"Drunk\". When that player dies, choose another. Each day, allow the Blackout to speak with you privately to name another player: if it is the player marked \"Drunk\", the Blackout is drunk until dawn, and whisper them a true statement - mark them \"Correct\", remove it at Dawn. Otherwise, send them away.",
+        "examples": [
+            "The Empath is drunk. The Blackout tells the Storyteller they think the Fortune Teller is drunk, and learn nothing.",
+            "The Puzzlemaster is drunk. When they die, the General becomes drunk instead.",
+            "The Alchemist is drunk. The Blackout tells the Storyteller they think the Alchemist is drunk, and learns the Demon is 3 steps from their nearest Minion. That night, the Alchemist's assasin kill goes through. The next day, they say the same, and learn that the Demon is an odd number of seats from them."
+        ]
+    },
+    {
+        "id": "fr_insan_plagued",
+        "name": "Plagued",
+        "team": "outsider",
+        "ability": "Townsfolk that vote on your execution are drunk until tomorrow dusk, even if you are dead.",
+        "reminders": [
+            "Drunk",
+            "Drunk",
+            "Drunk"
+        ],
+        "flavor": "Don't touch me!",
+        "hook": "Townsfolk that vote for the Plagued's execution are drunk until the next dusk.",
+        "summary": [
+            "If a Townsfolk votes for the Plagued's execution, they are instantly drunk.",
+            "Players drunk this way are drunk for the rest of the day, the next night, and the whole of the day after."
+        ],
+        "howtorun": "Each day, if the Plagued is nominated and any Townsfolk vote for the execution, they are drunk - mark them \"Drunk\". Each dusk, remove \"Drunk\" marks not placed today.",
+        "examples": [
+            "The Empath votes for the Plagued. That night, despite having an evil neighbour, they learn 0.",
+            "The Slayer votes for the Plagued. The next day, they choose the Demon, but nothing happens."
+        ]
+    },
+    {
+        "id": "fr_insan_ra'atchet",
+        "name": "Ra'atchet",
+        "team": "minion",
+        "ability": "On your 1st night, choose a direction: players register as their neighbour 1 step in that direction to Townsfolk abilities.",
+        "reminders": [
+            "Clockwise",
+            "Anti-Clockwise"
+        ],
+        "preceedingFirstNightId": "xaan",
+        "firstNight": 26.5,
+        "firstNightReminder": "The Ra'atchet indicates a direction.",
+        "flavor": "etB ouy ookedl pu hatw hist eantm.",
+        "hook": "The Ra'atchet rotates the grimoire one step for Townsfolk abilities.",
+        "summary": [
+            "The Ra'atchet must choose a direction.",
+            "All players register as their neighbour in that direction to Townsfolk abilities.",
+            "Any choices at night Townsfolk make instead choose the neighbour of the person they chose.",
+            "Characters that learn passive information are also affected by this, learning instead about players 1 step over.",
+            ""
+        ],
+        "howtorun": "On the first night, wake the Ra'atchet and let them indicate a direction - place the \"Clockwise\" or \"Anti-Clockwise\" in the centre of the Grimoire to remind you. Whenever a Townsfolk ability would learn information about or affect in any way a player, it instead affects their neighbour 1 step in the marked direction.",
+        "examples": [
+            "The Fortune Teller chooses the Demon and the Saint, their Red Herring. However, because the Ra'atchet registered each as their neighbour, they learn No.",
+            "The Saint is executed. Good loses.",
+            "The Gambler guesses themself as the Gambler, and their clockwise neighbour dies.",
+            "The Spy learns the entire grimoire rotated 1 step clockwise.",
+            "The Ra'atchet chooses Clockwise. That night, the Empath learns a 1 despite both their neighbours being good, as the player 2 steps clockwise from them is evil.",
+            "The Ra'atchet chooses Anticlockwise. The Slayer shoots the Demon's anticlockwise neighbour, and the Demon dies."
+        ],
+        "tip": "This is quite hard to run."
+    },
+    {
+        "id": "fr_insan_archeolos",
+        "name": "Archeolos",
+        "team": "minion",
+        "ability": "You start by choosing another alive player to give this ability. This is your only ability (if Townsfolk), or this acts twice (if evil & given by good).",
+        "reminders": [
+            "Has Ability",
+            "Has Ability",
+            "Has Ability",
+            "Has Ability",
+            "Doubled",
+            "Doubled"
+        ],
+        "preceedingFirstNightId": "poisoner",
+        "preceedingOtherNightId": "poisoner",
+        "firstNight": 27.5,
+        "otherNight": 14.875,
+        "firstNightReminder": "The Archeolos points at a player.",
+        "otherNightReminder": "The players with the Archeolos ability point at a player, or 2 if they are evil and were given it by good.",
+        "flavor": "Ok class, today we're going to see what these do. Catch!",
+        "hook": "The Archeolos forces good players to play hot potato.",
+        "summary": [
+            "Townsfolk with the Archeolos ability have no other ability until they lose the Archeolos ability.",
+            "If a good player gives the ability to an evil player, that evil player can give out 2 copies of the ability."
+        ],
+        "howtorun": "Each night, wake all players with the Archeolos ability one by one, and get them to choose an alive player that isn't themselves: mark the new player \"Has Ability\", and if they are evil and the original player is good, mark them \"Doubled\". If they were marked \"Doubled\", make them choose twice.",
+        "examples": [
+            "The Archeolos chooses the Fortune Teller. That night, the Fortune Teller isn't woken for their ability. They then choose the Soldier; when the Demon chooses them later that night, the Soldier dies.",
+            "The Saint with the Archeolos ability chooses the Po. The next night, the Po chooses the Empath and the Spy."
+        ],
+        "tip": "If more players have the ability than reminder tokens, use a notebook and pen."
+    },
+    {
+        "id": "fr_insan_sorceror",
+        "name": "Sorceror",
+        "team": "minion",
+        "ability": "Townsfolk nominations poison good nominees. Each night*, if none did, choose a player: they are poisoned until dusk.",
+        "reminders": [
+            "Townsfolk Nominated",
+            "Chosen",
+            "Poisoned",
+            "Poisoned",
+            "Poisoned",
+            "Poisoned"
+        ],
+        "preceedingOtherNightId": "poisoner",
+        "otherNight": 14.75,
+        "otherNightReminder": "If no Townsfolk nominated today, the Sorceror points at a player.",
+        "flavor": "To turn upon one's own must be punished.",
+        "hook": "The Sorceror forces good to permanently poison other good players, or face a night of untrustworthy information.",
+        "summary": [
+            "If a Townsfolk nominates a good player, that player is poisoned.",
+            "Townsfolk or Outsiders can be poisoned, but only Townsfolk nominations can cause the poison.",
+            "If nobody became poisoned because of the Sorceror in a day, they choose a player that night, who is poisoned until dusk."
+        ],
+        "howtorun": "Each day, if a Townsfolk nominates a good player, that player is poisoned, and mark the Sorceror \"Townsfolk Nominated\". Each night besides the first, if the Sorceror is not marked \"Townsfolk Nominated\", wake them and let them choose a player. That player is poisoned until dusk, mark them \"Chosen\".",
+        "examples": [
+            "The Choirboy nominates the King. The King is poisoned.",
+            "The Fortune Teller nominates the Snitch. The Snitch is poisoned.",
+            "No Townsfolk nominated today. Tonight, the Sorceror wakes, and chooses the Fortune Teller: they choose the Saint and Empath, neither their red herring, but learn a yes."
+        ]
+    },
+    {
+        "id": "fr_insan_siren",
+        "name": "Siren",
+        "team": "demon",
+        "ability": "Each night*, choose a player: they die. Outsiders you kill change alignment. [Outsiders might start evil, -1 to +1 Outsider]",
+        "preceedingOtherNightId": "kazali",
+        "otherNight": 52.984375,
+        "otherNightReminder": "The Siren points at a player.",
+        "flavor": "They say you oughta dance like no one's watching<br>They're a telepathic chorus in my mind",
+        "hook": "The Siren makes some Outsiders evil, and changes their alignment upon killing them.",
+        "summary": [
+            "The Siren chooses a player to kill each night besides the first.",
+            "The Siren forces there to be 1 more or 1 fewer Outsider than normal.",
+            "Outsiders might start evil, and learn if they are on the 1st night.",
+            "If the Siren kills an Outsider, they change alignment from good to evil or vice versa."
+        ],
+        "howtorun": "Upon setup, you may add or remove one Outsider token from the bag, and decide which Outsiders are evil - wake them on the first night to inform them. Each night besides the first, waken the Siren, and let them choose a player - that player dies. If that player was an Outsider and they died, change their alignment and wake them to tell them their new alignment.",
+        "examples": [
+            "There should be 1 Outsider, but both the Saint and Zealot are in play. The Zealot is evil.",
+            "When the Siren chooses the evil Recluse, they die and become good."
+        ]
+    },
+    {
+        "id": "fr_insan_destroyer",
+        "name": "Destroyer",
+        "team": "demon",
+        "ability": "Each night*, you may choose a player & a direction: They & 2 players in that direction for every night you didn't kill die.",
+        "reminders": [
+            "Kill Length",
+            "Dead"
+        ],
+        "preceedingOtherNightId": "kazali",
+        "otherNight": 52.96875,
+        "otherNightReminder": "The Destroyer points at a player and indicates a direction, or shakes their head.",
+        "flavor": "Goodbye.",
+        "hook": "The Destroyer can choose to hold off to kill more, but a night's kills must be in a line.",
+        "summary": [
+            "When the Destroyer chooses the kill, they choose a player and the direction for the line of kills instead of each player individually.",
+            "The Destroyer gains 2 extra kills per night they chose not to kill."
+        ],
+        "howtorun": "Place the \"Kill Length\" marker on the Destroyer. Each night besides the first, wake them, and allow them to choose a player and indicate a direction, or shake their head. If they shake their head, rotate the \"Kill Length\" marker two steps clockwise. If they choose a player and direction, note how far the \"Kill Length\" marker is from the Destroyer: the chosen player and that many players in the chosen direction die. Then, place the \"Kill Length\" marker back on the Destroyer.",
+        "examples": [
+            "On the second night, the Destroyer chooses Clockwise and the Fortune Teller: they die.",
+            "On the second night, the Destroyer chooses to hold. On the third night, they choose Clockwise and the Empath: the Empath and their 2 Clockwise neighbours die.",
+            "The Destroyer has held for 3 nights. They choose their counterclockwise neighbour, the Alchemist, and counterclockwise. The Alchemist, and their 6 anticlockwise neighbours die."
+        ]
+    },
+    {
+        "id": "fr_insan_wrazcal",
+        "name": "Wrazcal",
+        "team": "demon",
+        "ability": "Each night*, choose a player: learn how helpful killing them is to your team. Then, choose if they die. If not, tomorrow night, instead choose 2 player: they die.",
+        "reminders": [
+            "Twice",
+            "Dead",
+            "Dead"
+        ],
+        "preceedingOtherNightId": "kazali",
+        "otherNight": 52.9375,
+        "flavor": "To kill or not to kill? I do so enjoy toying with my prey, but I get ever so hungry...",
+        "hook": "The Wrazcal has the choice between an informed kill or two kills the next night.",
+        "summary": [
+            "The Wrazcal learns how good their kill would be when they choose.",
+            "They may then choose to follow through with the kill, or hold off.",
+            "If they hold off, they may not choose again, but instead choose two players to kill tomorrow night.",
+            "If the Wrazcal chooses 2 players, they don't learn how good those kills are."
+        ],
+        "howtorun": "Each night besides the first, wake the Wrazcal. If they are marked \"Twice\", remove it, and let them choose 2 players: they die. Otherwise, let them choose a single player. Inform them from 0-5 how helpful killing that player is for the Wrazcal's team, then allow them to nod or shake their head. If they nod, that player dies. If they shake, mark them \"Twice\", and put them to sleep.",
+        "examples": [
+            "The Wrazcal chooses the Savant. They learn 4, and choose to kill them.",
+            "The Wrazcal chooses the Saint. They learn 2, and choose to kill them.",
+            "The Wrazcal chooses the Moonchild, who is Innnkeeper protected. They learn 0, and choose to hold off. Tomorrow night, they choose the Innkeeper and Pacifist, who both die."
+        ]
+    },
+    {
+        "id": "fr_insan_kuthullion",
+        "name": "Kuthullion",
+        "team": "demon",
+        "ability": "Each night*, see the grimoire, then choose a player: they die. After day 3, if all evils live, they lose.",
+        "flavor": "I have seen the dark universe yawning<br>Where the black planets roll without aim,<br>Where they roll in their horror unheeded,<br>Without knowledge, or lustre, or name.",
+        "reminders": [
+            "Dead",
+            "1st Day",
+            "2nd Day"
+        ],
+        "preceedingOtherNightId": "kazali",
+        "otherNight": 52.875,
+        "hook": "The Kuthullion knows the grimoire before they kill, but must kill an evil by the 4th night.",
+        "summary": [
+            "The Kuthullion sees the grimoire before they kill, but only from the second night onwards.",
+            "If no evil players are dead by the 4th night, good wins."
+        ],
+        "howtorun": "At the end of the day, if the Kuthullion is unmarked, mark them \"1st Day\". If marked \"1st Day\", remove it and mark them \"2nd Day\". If marked \"2nd Day\", check if all evil players are alive: if so, good wins.<br> Each night besides the first, wake the Kuthullion, and show them the grimoire. Let them choose a player, that player dies.",
+        "examples": [
+            "The Kuthullion sees the Undertaker has been hiding as the Recluse, and kills them.",
+            "At the end of the 3rd day, the Scarlet Woman is dead. The game continues.",
+            "At the end of the 3rd day, no evil players are dead. Good wins."
+        ]
+    },
+    {
+        "id": "fr_insan_ketacles",
+        "name": "Ketacles",
+        "team": "demon",
+        "ability": "Each night*, choose a player: they die. If 3 players live, good only wins if an Outsider is executed. [+1 Outsider]",
+        "jinxes": [
+            {
+                "id": "saint",
+                "reason": "If the living Saint is executed on the final day, good wins."
+            }
+        ],
+        "flavor": "My roots take hold in the minds of those scorned.",
+        "reminders": [
+            "Dead"
+        ],
+        "preceedingOtherNightId": "kazali",
+        "hook": "The Ketacles forces good to execute an Outsider on the final day to win.",
+        "summary": [
+            "If the Ketacles is in play, an extra Outsider is added to the bag.",
+            "On the final day, good wins if and only if an Outsider is executed.",
+            "Good still loses even if they execute the Ketacles on the final day, or if they do not execute.",
+            "Good wins if they execute an outsider, regardless of if that Outsider is dead or alive."
+        ],
+        "examples": [
+            "3 players live, and nobody is executed. Evil wins immediately.",
+            "3 players live, and the Ketacles is executed. Evil wins.",
+            "3 players live, and the alive Barber is executed. Good wins.",
+            "3 players live, and the dead Klutz is executed. Good wins."
+        ],
+        "otherNight": 52.75
+    },
+    {
+        "id": "fr_insan_skemator",
+        "name": "Skemator",
+        "team": "demon",
+        "ability": "Evil wins if noone is executed in a day, or after day 3, extended by 1 for each alive Minion.",
+        "flavor": "Those who serve me only weigh me down. Come, see how you fare with us both alone.",
+        "reminders": [
+            "1st Day",
+            "2nd Day",
+            "Minion 1",
+            "Minion 2",
+            "Minion 3"
+        ],
+        "hook": "The Skemator wins earlier if its Minions are killed before it.",
+        "summary": [
+            "The Skemator has a threshold for winning at day (3 + alive Minions).",
+            "If this is ever passed, evil wins.",
+            "If an alive Minion is killed the day evil would win after, evil wins instantly.",
+            "If an alive Minion is executed the day before evil would win, evil still wins instantly, as the timer reduces to the end of the current day.",
+            "If nobody is executed each day, evil wins."
+        ],
+        "examples": [
+            "There are 2 alive Minions, and day 5 ends with a good player's execution: evil wins.",
+            "It is day 3, and the only Minion is executed: evil wins.",
+            "It is day 4, with only 1 alive Minion. They are nominated by the Golem, die, and evil wins.",
+            "It is day 3, with no alive Minions. The Skemator is executed, and good wins.",
+            "On the 1st day, nobody is executed. Evil wins.",
+            "On the 2nd day, the Sailor is executed and survives. The game continues."
+        ]
+    },
+    {
+        "id": "fr_insan_cnidreat",
+        "name": "Cnidreat",
+        "team": "demon",
+        "ability": "After day 5, evil wins. Twice per game, at night*, you may choose a player: they die. If you die this way, you live & register dead.",
+        "flavor": "\ud802\udd14\ud802\udd05\ud802\udd0d \ud802\udd04\ud802\udd0b\ud802\udd06\ud802\udd0c \ud802\udd14\ud802\udd0b \ud802\udd01\ud802\udd09 \ud802\udd0c\ud802\udd0d. \ud802\udd01\ud802\udd15 \ud802\udd0f\ud802\udd0d\ud802\udd15\ud802\udd0b \ud802\udd15\ud802\udd0d \ud802\udd00\ud802\udd09 \ud802\udd00\ud802\udd05\ud802\udd0b \ud802\udd0d\ud802\udd05 \ud802\udd0d\ud802\udd03 \ud802\udd10\ud802\udd13 \ud802\udd09\ud802\udd05.",
+        "reminders": [
+            "Dead"
+        ],
+        "preceedingOtherNightId": "kazali",
+        "hook": "The Cnidreat bridges the gap between a timer and kills, tactically disabling players or hiding itself.",
+        "summary": [
+            "At the end of day 5, evil wins.",
+            "Twice before that, at night*, the Cnidreat may choose to kill a player.",
+            "If the Cnidreat chooses to kill themselves, they register dead, but are secretly alive.",
+            "An undead Cnidreat may not nominate and may only vote once, as if they were dead."
+        ],
+        "examples": [
+            "The Mutant is executed on day 5. Evil wins.",
+            "The Cnidreat chooses the Fortune Teller on the 2nd night, who dies.",
+            "The Cnidreat is bluffing Undertaker, and chooses themselves to fake their death.",
+            "The Cnidreat chooses themselves on the 3rd night. The next day, good executes them anyway, believing them to be the Cnidreat: they die and good wins."
+        ],
+        "otherNight": 52.5
+    },
+    {
+        "id": "fr_insan_thehouse",
+        "name": "The House",
+        "team": "traveler",
+        "ability": "Players may make wagers with eachother or the Storyteller, they are binding if the Storyteller agrees. If you win a wager, something good happens for your team (you learn what).",
+        "flavor": "Don't bet against the house.",
+        "hook": "The House allows wagers, and gets rewarded extra if they win.",
+        "summary": [
+            "If The House is in play, players may make wagers.",
+            "Each player in the wager sets a condition, and a price and/or reward.",
+            "If the Storyteller hears the terms and agrees, it is binding, and the price/reward will come true should they be needed.",
+            "If the House wins a wager, something good happens for their team, and they learn it."
+        ],
+        "examples": [
+            "The Empath wagers they learn a 2 tonight. They state that if they win, they're sober, otherwise they're drunk. The Storyteller agrees, and they become drunk when they learn a 1.",
+            "The Goblin wagers with the Fortune Teller they won't be executed if they claim Goblin, on condition that the loser is drunk immediately. The Goblin is executed, becomes drunk, and doesn't win.",
+            "The good The House wagers with the High Priestess that 2 players will die tonight, and the loser gives their vote token to the winner. 2 players die that night, so the High Priestess' vote token is given to the House, and The House learns that the drunk Village Idiot became sober."
+        ]
+    },
+    {
+        "id": "mgob_meatlantern",
+        "name": "Temptation",
+        "team": "townsfolk",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/Temptation.png?raw=true",
+        "ability": "Each night, choose a player: if evil, they learn this. If they nominate you tomorrow, they are drunk. If the Demon, a Minion is instead.",
+        "reminders": [
+            "Tempted",
+            "Drunk",
+            "Drunk",
+            "Drunk"
+        ],
+        "preceedingFirstNightId": "nightwatchman",
+        "firstNightReminder": "Allow Temptation to choose a player. If evil, inform them they were chosen.",
+        "preceedingOtherNightId": "nightwatchman",
+        "otherNightReminder": "Allow Temptation to choose a player. If evil, inform them they were chosen.",
+        "flavor": "...That's not a flower. Order all the employees nearby to evacuate immediately.",
+        "hook": "Temptation forces evils they choose to being wary of nominating, for fear of drunkenness.",
+        "summary": [
+            "Temptation chooses a player each night, regardless.",
+            "Evil players that Temptation choose learn they were chosen, but not by whom.",
+            "Regardless of alignment, if the chosen player nominates Temptation tomorrow, they are drunk.",
+            "Players drunk from Temptation remain drunk even if Temptation is dead."
+        ],
+        "howtorun": "Each night, let Temptation choose a player. Mark them \"Tempted\". If they are evil, wake them, show them \"This character chose you\", and Temptation's token.<br>Each day, if the player marked \"Tempted\" nominates Temptation, they are drunk - mark them \"Drunk\".",
+        "examples": [
+            "Temptation chooses the Alsaahir. The Alsaahir nominates Temptation, and is drunk from then on.",
+            "Temptation chooses the Assassin. The Assassin learns they were chosen, is cautious about nominating tomorrow, and does not end up drunk.",
+            "Temptation chooses the Imp. The Imp gambles they won't nominate wrong, nominates Temptation, and becomes drunk. The Assassin kills Temptation, but the Imp is still drunk."
+        ],
+        "firstNight": 64.5,
+        "otherNight": 85.5
+    },
+    {
+        "id": "mgob_graveofcherryblossoms",
+        "name": "Blossoms",
+        "team": "townsfolk",
+        "ability": "Each night, choose a player. Every second time a player you chose was executed, learn the alignments of the nominators.",
+        "reminders": [
+            "Good Nominator",
+            "Good Nominator",
+            "Evil Nominator",
+            "Evil Nominator",
+            "Chosen",
+            "Chosen",
+            "Chosen"
+        ],
+        "preceedingFirstNightId": "mgob_crumblingarmour",
+        "firstNightReminder": "Allow Blossoms to choose a player.",
+        "preceedingOtherNightId": "mgob_crumblingarmour",
+        "otherNightReminder": "Allow Blossoms to choose a player. If two players Blossoms chose were executed, show them the alignments of the nominators.",
+        "flavor": "The more blood it has, the more beautiful it is",
+        "hook": "Blossoms learns the alignments of those who feed it with its chosen victims.",
+        "summary": [
+            "Every night, Blossoms chooses a player.",
+            "Every 2nd time a player Blossoms chose is executed, Blossoms wakes that night to learn the alignments of the nominators.",
+            "They learn both alignments in an arbitrary order.",
+            "On the night they learn information, Blossoms still chooses a player."
+        ],
+        "howtorun": "Each night, wake Blossoms and let them choose a player: mark them \"Chosen\". If Blossoms has two \"Good Nominator\"/\"Evil Nominator\" marks, remove them, and inform them the alignments respectively.<br>If a player marked \"Chosen\" is executed, mark Blossoms with \"Good Nominator\" or \"Evil Nominator\", according to the alignment of the nominator.",
+        "examples": [
+            "Blossoms chooses the Snake Charmer, the Gambler, and the Recluse over the first 3 nights. On the 2nd day, the Gambler is executed, and on the 3rd, the Snake Charmer is. That night, Blossoms wakes to learn the alignments of their nominators, and to choose the Empath.",
+            "The Undertaker is executed by the Scarlet Woman, and the good Goon is executed by the Lunatic, both having been chosen. Blossoms wakes and learns Good and Evil.",
+            "Blossoms learns information on the 3rd night, but chooses more players who are executed, and so learns information on the 5th night too."
+        ],
+        "firstNight": 43.75,
+        "otherNight": 64.75
+    },
+    {
+        "id": "mgob_crumblingarmour",
+        "name": "Recklessness",
+        "team": "townsfolk",
+        "ability": "Each night, choose a player. If they are evil & you have chosen an evil player before, lose this ability.",
+        "reminders": [
+            "Once",
+            "No Ability"
+        ],
+        "preceedingFirstNightId": "huntsman",
+        "firstNightReminder": "Allow Recklessness to choose a player. If they chose evil, mark them \"Once\".",
+        "preceedingOtherNightId": "huntsman",
+        "otherNightReminder": "Allow Recklessness to choose a player. If they chose evil, mark them \"Once\" if they aren't already, otherwise they lose their ability.",
+        "flavor": "Life is only granted to those who hold no fear of death.",
+        "hook": "Recklessness looses its ability after choosing evil players twice.",
+        "summary": [
+            "Recklessness does not learn anything upon choosing a player.",
+            "After the 2nd time Recklessness chooses an evil player, they don't wake from now on."
+        ],
+        "howtorun": "Each night, wake Recklessness and allow them to choose a player. If they chose evil, and are unmarked, mark them \"Once\", if already marked \"Once\" mark them \"No Ability\".",
+        "examples": [
+            "Recklessness chooses the Empath, then the good Cult Leader, then the Godfather, then the Summoner, and doesn't wake from then on.",
+            "Recklessness chooses the Scarlet Woman on the 1st and 2nd nights, and doesn't wake from then on.",
+            "Recklessness chooses the Snake Charmer twice in a row. They then choose the Imp twice, and stop waking."
+        ],
+        "firstNight": 43.5,
+        "otherNight": 64.5
+    },
+    {
+        "id": "mgob_scorchedgirl",
+        "name": "Longing",
+        "team": "townsfolk",
+        "ability": "Each night, choose 2 living players (not yourself): learn which the Storyteller believes would be better for their team to execute tomorrow.",
+        "preceedingFirstNightId": "seamstress",
+        "firstNightReminder": "Allow Longing to choose 2 players, indicate which you think would be better for their team to execute.",
+        "preceedingOtherNightId": "seamstress",
+        "otherNightReminder": "Allow Longing to choose 2 players, indicate which you think would be better for their team to execute.",
+        "flavor": "I am coming to you. You, who will be reduced to ash like me.",
+        "hook": "Longing learns which of two players would be better for their allies to sacrifice.",
+        "summary": [
+            "Longing chooses 2 players each night, and learns 1.",
+            "Longing learns which of the 2 players they chose the Storyteller believes is better for the player's allies to execute tomorrow.",
+            "Longing only learns about tomorrow's execution, not future days.",
+            "Longing learns about how it would be for the player's allies to execute them, which may be a different team for each player chosen.",
+            "Longing may not choose themselves."
+        ],
+        "howtorun": "Each night, wake Longing, and allow them to choose 2 players. Show them which you believe would be better for that player's allies to execute tomorrow.",
+        "examples": [
+            "Longing chooses the Fortune Teller and the Washerwoman, and learns the Washerwoman player.",
+            "Longing chooses the Baron and the Saint, and learns the Baron.",
+            "Longing chooses the Imp and the Professor, and learns the Imp - the evil team has a Mastermind that nobody has thought of, meanwhile the Professor has yet to use their ability."
+        ],
+        "firstNight": 56.5,
+        "otherNight": 79.5
+    },
+    {
+        "id": "mgob_1.76mhz",
+        "name": "Noise",
+        "team": "townsfolk",
+        "ability": "Each night, choose a unique player (not yourself): learn a character. It's in play if & only if they are evil.",
+        "reminders": [
+            "Chosen",
+            "Chosen",
+            "Chosen",
+            "Chosen"
+        ],
+        "preceedingFirstNightId": "dreamer",
+        "firstNightReminder": "Allow Noise to choose a player, show them a character.",
+        "preceedingOtherNightId": "dreamer",
+        "otherNightReminder": "Allow Noise to choose a player, show them a character.",
+        "flavor": "This is a recording of the day we must never forget.",
+        "hook": "Noise learns out of play characters, unless they choose an evil player.",
+        "summary": [
+            "Noise learns a character each night.",
+            "That character is out of play, unless the player they chose was evil."
+        ],
+        "howtorun": "Each night, wake Noise, and let them choose a player not marked \"Chosen\" - mark their choice \"Chosen\" (or note down if needed). If they chose a good player, show an out of play character, otherwise show an in play character.",
+        "examples": [
+            "Noise chooses the Empath and sees the Fang Gu token.",
+            "Noise chooses the Scarlet Woman and sees the Scarlet Woman token."
+        ],
+        "firstNight": 55.5,
+        "otherNight": 75.5
+    },
+    {
+        "id": "mgob_today'sshylook",
+        "name": "Emotion",
+        "team": "townsfolk",
+        "ability": "Each night, choose a player (not yourself): tomorrow, you may visit the Storyteller to learn a fact; if they are evil, learn false info.",
+        "reminders": [
+            "False Info"
+        ],
+        "preceedingFirstNightId": "empath",
+        "firstNightReminder": "Allow Emotion to choose a player.",
+        "preceedingOtherNightId": "empath",
+        "otherNightReminder": "Allow Emotion to choose a player.",
+        "flavor": "It's a good day! Are you still shy today?",
+        "hook": "Emotion learns a statement as true as the heart of the player they choose.",
+        "summary": [
+            "Emotion chooses a player each night.",
+            "This initially does nothing, until they visit the Storyteller, and learn a statement.",
+            "They learn a true statement if they chose a good player, and a false one if they chose an evil player."
+        ],
+        "howtorun": "Each night, wake Emotion, and allow them to choose a player. If they chose evil, mark them \"False Info\".<br>If Emotion comes to speak with you, whisper a true statement to them, or a false one if they're marked \"False Info\".",
+        "examples": [
+            "Emotion chooses the Klutz. That day, they visit the Storyteller and learn \"Your choice neighbours a Minion.\" - this is true.",
+            "Emotion chooses the Marionette. That day, they visit the Storyteller and learn \"The Demon is a woman.\" - the Demon is non-binary; Emotion learned false information."
+        ],
+        "firstNight": 50.5,
+        "otherNight": 72.5
+    },
+    {
+        "id": "mgob_heartofaspiration",
+        "name": "Aspiration",
+        "team": "townsfolk",
+        "ability": "Each night*, learn the alignment of the nominator of the previous player you learnt about (yourself if there was none).",
+        "reminders": [
+            "Subject",
+            "Nominator"
+        ],
+        "preceedingOtherNightId": "towncrier",
+        "otherNightReminder": "Show Aspiration the alignment of the player marked \"Subject\".",
+        "flavor": "Excessive aspiration would bring about unwanted frenzy.",
+        "hook": "The Aspiration passes its favour by nomination, learning the alignment of its owner.",
+        "summary": [
+            "Aspiration learns nothing until the player they learned about last is nominated.",
+            "If the player they learned about is nominated, they learn the alignment of the nominator, and will learn about their nominator next.",
+            "This can only pass once per day, and passes even if Aspiration is drunk or poisoned.",
+            "If Aspiration has no previously learned player, which is to say, when they enter play, they learn about their own nominator."
+        ],
+        "howtorun": "When they enter play, mark Aspiration \"Subject\".<br>When a player marked \"Subject\" is nominated, mark the nominator \"Nominator\".<br>Each night besides the first, if anyone is marked \"Nominator\", show their alignment to Aspiration, then replace \"Nominator\" with \"Subject\".",
+        "examples": [
+            "On the 1st day, the Empath nominates Aspiration. That night, Aspiration learns good.",
+            "On the 2nd night, Aspiration learns the Mezepheles' alignment. The Mezepheles is then nominated by the Imp that day. Aspiration learns evil that night.",
+            "On the 4th night, Aspiration learns the Fortune Teller's alignment. That day, the Yaggababble nominates the Fortune Teller. The Tinker nominates the Yaggababble, the Hermit nominates the Tinker, and the Scarlet Woman nominates the Hermit. Aspiration learns evil, the alignment of the Yaggababble."
+        ],
+        "otherNight": 77.5
+    },
+    {
+        "id": "mgob_bloodbath",
+        "name": "Dedication",
+        "team": "townsfolk",
+        "ability": "Each night*, if you were about to die yesterday, choose a player who voted on you: learn their alignment.",
+        "reminders": [
+            "Proven",
+            "Voted",
+            "Voted",
+            "Voted",
+            "Voted"
+        ],
+        "preceedingOtherNightId": "villageidiot",
+        "otherNightReminder": "If Dedication is marked \"Proven\", they may choose a player who voted on them.",
+        "flavor": "Many hands float in the bath. They are the hands of the people I once loved.",
+        "hook": "Dedication learns the alignment of a player who voted on them, but only if they risk execution.",
+        "summary": [
+            "Dedication only wakes if they were about to die yesterday.",
+            "When they do, they may only choose players who voted upon them.",
+            "They learn the alignment of their choice."
+        ],
+        "howtorun": "Each day, if Dedication is nominated, mark all who vote on them \"Voted\" (if there are more than reminders permit, note down on paper or a phone or similar). If they were about to die from the nomination, mark them \"Proven\".<br>Each night besides the first, if Dedication is marked \"Proven\", wake them, and point to players marked \"Voted\" (or those noted down). They choose one, indicate that player's alignment.",
+        "examples": [
+            "The Empath, Imp, Golem, and Vizier voted for Dedication, marking them about to die. This is then lifted to the Zealot. That night, Dedication chooses the Imp: they learn evil.",
+            "The Fortune Teller, Al-Hadikhia, and Spy voted for Dedication, which was then lifted onto the Fortune Teller. That night, Dedication chooses the Fortune Teller, and learns good.",
+            "Dedication got 10 votes, was about to die, and died by execution. They do not wake that night."
+        ],
+        "otherNight": 82.75
+    },
+    {
+        "id": "mgob_fragmentoftheuniverse",
+        "name": "Echoes",
+        "team": "townsfolk",
+        "ability": "Each day, you may publicly ask a yes/no question, all answer. Tonight, learn if the majority was right & the majority of evil was wrong or vice versa.",
+        "reminders": [
+            "Called",
+            "Majority Correct",
+            "Evils Correct"
+        ],
+        "preceedingOtherNightId": "ravenkeeper",
+        "otherNightReminder": "Show Echoes whether the majority were correct, falsely if most evils were.",
+        "flavor": "You see a song in front of you. It's approaching, becoming more colorful by the second.",
+        "hook": "Echoes learns if most agree with the truth, but evils can twist it if they agree.",
+        "summary": [
+            "Each day, Echoes may declare a statement publicly.",
+            "The statement cannot have a mechanically announced answer at time of declaration, and must be gamestate related.",
+            "Once a statement has been made, everyone votes on if they agree, starting with Echoes' clockwise neighbour.",
+            "Players vote whether alive or dead, and dead players don't need a vote token.",
+            "The night after they declare, Echoes learns if a strict majority of players were correct.",
+            "However, if a strict majority of evil players voted, Echoes learns false information."
+        ],
+        "howtorun": "Each day, allow Echoes to declare a statement - mark them \"Called\". Run a vote as for an exile, where players raise their hand if they think the statement is true (if needed, ask them to keep their hands raised). When the vote concludes, note if the strict majority was right, and if the strict majority of the evils was right (mark Echoes \"Majority Correct\" and \"Evils Correct\"). If there was an even split, nothing happens.<br>Each night besides the first, if Echoes is marked \"Called\", remove it and wake them. Inform them if the majority was correct, but give them false info if evils was correct.",
+        "examples": [
+            "Echoes declares that the Demon neighbours a Minion. The majority vote they agree, and the majority of evils vote they disagree. It is true, so Echoes learns yes that night.",
+            "Echoes declares that Bill is evil. The majority vote they agree, including the majority of evils. It is true, but evils voted to agree, so Echoes learns no that night.",
+            "Echoes declares that the Mathematician learnt a 3 last night. The majority votes they disagree, as do evils. As the Mathematician did in fact learn a 3, Echoes learns no.",
+            "Echoes declares that the Virgin, whose ability executed someone, is the Virgin. This is an invalid statement.",
+            "Echoes declares that their neighbours both could wake that night. The majority votes they disagree, but evils vote they agree. As both could, and evils agreed, Echoes learns yes.",
+            "Echoes declares that precisely 2 characters in play have \"You start knowing\" in their text. 7 players vote either way, and so Echoes doesn't wake that night."
+        ],
+        "otherNight": 71.5
+    },
+    {
+        "id": "mgob_oldlady",
+        "name": "Solitude",
+        "team": "townsfolk",
+        "ability": "Twice per game, at night*, choose 3 players (not yourself): learn if you chose precisely 1 evil.",
+        "reminders": [
+            "Once",
+            "No ability"
+        ],
+        "preceedingOtherNightId": "villageidiot",
+        "otherNightReminder": "If Solitude is not marked \"No Ability\", wake them and allow them to choose 3 players or shake their head.",
+        "flavor": "She was so talkative before, yet in the end, loneliness was the only listener.",
+        "hook": "Solitude isolates groups of 2 good and 1 evil.",
+        "summary": [
+            "Solitude can use their ability twice, and cannot use it on the first night.",
+            "When they use their ability, they learn if precisely 1 evil is amongst the players they chose.",
+            "If 0, 2, or 3 evils were chosen, they still learn a no.",
+            "Solitude may not choose themself."
+        ],
+        "howtorun": "Each night besides the first, unless Solitude is marked \"No Ability\", wake them and allow them to shake their head or point to 3 players (that aren't themselves). If they pointed to 3 players, indicate if precisely 1 chosen was evil, then if they're unmarked, mark them \"Once\", or if marked \"Once\", mark them \"No Ability\".",
+        "examples": [
+            "On the 2nd night, Solitude chooses the Hermit, Heretic, and Scarlet Woman: they learn a yes.",
+            "On the 3rd night, Solitude chooses the Seamstress, Savant, and the Village Idiot: they learn a no.",
+            "Solitude uses their ability on the 2nd night, then on the 4th night. From then on, they don't wake.",
+            "Solitude chooses the Imp, Baron, and Tinker. They learn a no."
+        ],
+        "otherNight": 82.5
+    },
+    {
+        "id": "mgob_ppodae",
+        "name": "Innocence",
+        "team": "townsfolk",
+        "ability": "You & your neighbours are safe from Minions.",
+        "reminders": [
+            "Safe",
+            "Safe",
+            "Safe"
+        ],
+        "flavor": "Dude... your \u201clittle angel\u201d is gnawing on our colleague\u2019s finger.",
+        "hook": "Innocence protects themselves and their neighbours from Minions.",
+        "summary": [
+            "Innocence and their neighbours completely ignore negative effects from any Minions whilst Innocence has their ability.",
+            "They can still be killed and affected from the Demon."
+        ],
+        "howtorun": "If a Minion would negatively effect Innocence or their neighbours (e.g. poison, turning evil, killing), nothing happens instead.",
+        "examples": [
+            "The Godfather chooses Innocence's neighbour at night: they live.",
+            "The Poisoner chooses Innocence. Later, the Witch chooses Innocence's neighbour: when they nominate, they do not die, as Innocence was not poisoned and therefore they were not cursed."
+        ]
+    },
+    {
+        "id": "mgob_fruitofunderstanding",
+        "name": "Concentration",
+        "team": "townsfolk",
+        "ability": "If you die by being nominated by another & executed, that night, learn the in play Demon. If your nominator was evil, learn false information.",
+        "reminders": [
+            "Evil Nominator",
+            "Executed Today"
+        ],
+        "preceedingOtherNightId": "undertaker",
+        "otherNightReminder": "If Concentration died by execution yesterday and wasn't the nominator, tell them the in-play Demon (or an out of play Demon if their nominator was evil).",
+        "flavor": "To gain an understanding of what is incomprehensible, they dream, staring.",
+        "hook": "Concentration can learn what Demon it is by being a sacrifice, but an evil can twist this to be false.",
+        "summary": [
+            "If Concentration is executed by another player and dies, they learn the in play Demon.",
+            "If their nominator was evil, they learn an out of play Demon instead."
+        ],
+        "howtorun": "When Concentration is nominated, if the nominator was evil, mark Concentration \"Evil Nominator\", otherwise remove the marker. If they die by execution, mark them \"Executed Today\".<br>At night, if they are marked \"Executed Today\", wake Concentration, and show them the Demon's token. If they are marked \"Evil Nominator\", instead show them an out of play Demon's token.",
+        "examples": [
+            "Concentration is executed by the Fortune Teller. They learn the Imp, which is the in play Demon.",
+            "Concentration is executed by the Wizard. They learn the Yaggabbabble, despite the Demon being a Pukka."
+        ],
+        "otherNight": 74.5
+    },
+    {
+        "id": "mgob_beautyandthebeast",
+        "name": "Beauty",
+        "team": "townsfolk",
+        "ability": "Non-Demons that nominate and execute you become Beauty.",
+        "flavor": "However, the curse continues eternally, never broken.",
+        "hook": "Beauty passes on its character on execution.",
+        "summary": [
+            "If Beauty is executed, the nominator might instantly become Beauty.",
+            "There are no restrictions on who can become Beauty, but the Demon generally should not.",
+            "The new Beauty being executed may also make their nominator Beauty as well."
+        ],
+        "howtorun": "If Beauty is executed, decide if their ability should proc - generally it should proc on non-Demons, unless there is a specific reason not to - if it does, their nominator becomes Beauty. Wake them at the start of the night, show them \"You are\" followed by Beauty's token.",
+        "examples": [
+            "The Farmer executes Beauty, and becomes it.",
+            "The Fortune Teller executes Beauty, and stays as their character.",
+            "The Witch executes Beauty, and becomes it. They are still evil.",
+            "A Legion executes Beauty, and becomes it. They stay evil, but no longer are \"the Demon\"."
+        ]
+    },
+    {
+        "id": "mgob_shelterfromthe27thofmarch",
+        "name": "Shelter",
+        "team": "outsider",
+        "ability": "The 1st time the Demon dies, a Minion becomes it, even if dead. On the final night or if executed by an evil, lose this ability.",
+        "reminders": [
+            "Safety",
+            "No Ability",
+            "Is the Demon"
+        ],
+        "preceedingOtherNightId": "barber",
+        "otherNightReminder": "If the Shelter ability hasn't been used, wake the Demon to chooose if they wish to use it.",
+        "flavor": "It literally makes itself into \"the safest place on Earth.\"",
+        "hook": "The Shelter gives the option of passing the Demon if they time it right.",
+        "summary": [
+            "The Demon learns the Shelter is in play on the 1st night.",
+            "They may choose once to use the ability, regardless of if the Shelter is alive or dead.",
+            "If they use the ability and are executed that day, a Minion becomes their character, and the game continues.",
+            "If they use the ability and are not executed that day, they may not use it again.",
+            "The Demon cannot use the ability on the final night, even if they have used it before."
+        ],
+        "howtorun": "Each night, if the Shelter is not marked \"No Ability\", when the Demon wakes, show the Shelter's token, and get them to nod or shake their head. If they nod, mark them \"Safety\" and mark the Shelter \"No Ability\".<br>If the Demon is executed and is marked \"Safety\", a Minion becomes the Demon - mark them \"Is the Demon\", and wake them that night to show them \"You are\" followed by the Demon's token.<br>At dusk, remove the \"Safety\" marker.",
+        "examples": [
+            "The Imp uses the Shelter's ability on the 3rd night, and is executed that day. The Spy becomes the Imp.",
+            "The Al-Hadikhia uses the Shelter's ability on the 4th night. They are not executed that day, but are on the next - they die and good wins.",
+            "The Leviathan doesn't use the Shelter's ability on the first 4 nights. They cannot on the 5th, as it is the final night."
+        ],
+        "otherNight": 57.5
+    },
+    {
+        "id": "mgob_thesweepers",
+        "name": "Sweeper",
+        "team": "outsider",
+        "ability": "If an evil player nominates & executes another, the nominee keeps their ability & the nominator poisons a Townsfolk neighbour, even if you are dead.",
+        "reminders": [
+            "Poisoned",
+            "Poisoned",
+            "Poisoned",
+            "Has Ability",
+            "Has Ability",
+            "Has Ability"
+        ],
+        "flavor": "When night falls in the Backstreets, they will come.",
+        "hook": "The Sweeper spreads misinformation and panic when evils execute eachother.",
+        "summary": [
+            "If an evil player executes another evil player, the executed player keeps their ability.",
+            "The nominator also poisons one of their Townsfolk neighbours",
+            "If the nominator dies, the poisoned player is still poisoned."
+        ],
+        "howtorun": "When an evil player is executed, if their nominator was evil, mark one of the nominator's Townsfolk neighbours \"Poisoned\", and mark the executee \"Has Ability\".",
+        "examples": [
+            "The Evil Goon nominates and executes the Mastermind. The Fortune Teller, who neighboured the Goon, becomes poisoned.",
+            "The Scarlet Woman nominates and executes the Imp. The Imp continues to kill whilst dead.",
+            "The Assassin nominates and executes the Witch. The Witch continues to choose a player each night, and the Empath, who neighbours the Assassin, is poisoned."
+        ]
+    },
+    {
+        "id": "mgob_laetitia",
+        "name": "Dollwitch",
+        "team": "outsider",
+        "ability": "On your 1st night*, choose an alive player: You may only nominate them. If they die, choose again tonight.",
+        "reminders": [
+            "Best Friend",
+            "1st Night",
+            "2nd Night"
+        ],
+        "jinxes": [
+            {
+                "id": "cannibal",
+                "reason": "The Cannibal learns if they get the Dollwitch ability."
+            }
+        ],
+        "preceedingOtherNightId": "butler",
+        "otherNightReminder": "If it is the Dollwitch's 2nd night, or their chosen player died tonight or today, they choose an alive player.",
+        "flavor": "She was so sad that she had to leave her dear friends behind, so she came up with a brilliant idea!",
+        "hook": "The Dollwitch can only nominate an alive player of their choosing.",
+        "summary": [
+            "On their 1st night that isn't the 1st night of the whole game, the Dollwitch chooses an alive player to be able to nominate.",
+            "If the player dies, the Dollwitch wakes at the next opportunity, and chooses a new alive player.",
+            "As the Dollwitch's ability is a rules restriction, it applies even whilst they are drunk or poisoned."
+        ],
+        "howtorun": "On the 2nd night, or if the player marked \"Best Friend\" is dead, wake the Dollwitch, and have them choose a player. If they choose a dead player, shake your head and have them choose again. Mark their choice \"Best Friend\" - they may only nominate that player.",
+        "examples": [
+            "On the 2nd night, the Dollwitch chooses the Fortune Teller. From then on, they may only nominate the Fortune Teller.",
+            "On the 2nd night, the Dollwitch chooses the Cerenovus. The Cerenovus is executed on the next day, and so the Dollwitch chooses the Butler."
+        ],
+        "otherNight": 87.5
+    },
+    {
+        "id": "mgob_schadenfreude",
+        "name": "Sadist",
+        "team": "outsider",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/Sadist.png?raw=true",
+        "ability": "Townsfolk that nominate you or choose you with their abilities at night are drunk until dusk, even if you are dead.",
+        "reminders": [
+            "Nominated",
+            "Drunk",
+            "Drunk",
+            "Drunk",
+            "Drunk"
+        ],
+        "flavor": "Someone's persistent gaze can be felt from the keyhole inside the machine",
+        "hook": "The Sadist drunks Townsfolk who interact with it.",
+        "summary": [
+            "If the Sadist is chosen by a Townsfolk at night, that Townsfolk is instantly drunk and gets reversed information until dusk.",
+            "If the Sadist is nominated by a Townsfolk, that Townsfolk is drunk and gets reversed information from dusk until dusk.",
+            "The Sadist's reversed information only applies to that Townsfolk's ability - if they learn information from another ability, it is as normal."
+        ],
+        "howtorun": "If the Sadist is nominated by a Townsfolk, mark the nominator \"Nominated\".<br>If the Sadist is chosen by a Townsfolk during the night, mark that Townsfolk \"Drunk\"<br>Each dusk, remove any \"Drunk\" markers. Then, if a player is marked \"Nominated\", mark them \"Drunk\".",
+        "examples": [
+            "The Empath with 2 good neighbours nominates the Sadist. That night, they learn a 1.",
+            "The Monk chooses the Sadist at night. When the Demon then chooses the Sadist, the Sadist dies.",
+            "The Artist nominated the Sadist yesterday. Today, they ask \"Is Julie evil?\" and learn a no, despite Julie being the Demon.",
+            "The Witch chooses the Sadist, and nominates them that day. They are not drunk."
+        ]
+    },
+    {
+        "id": "mgob_parasitetree",
+        "name": "Alluring Fruit",
+        "team": "minion",
+        "ability": "You start knowing all Outsider players (they learn this). Once per game, at night*, choose one: they turn evil & lose their ability. [+0 or +1 Outsider]",
+        "reminders": [
+            "No ability",
+            "No ability"
+        ],
+        "jinxes": [
+            {
+                "id": "damsel",
+                "reason": "The Alluring Fruit does not know the Damsel and may choose non-Outsiders with their ability. If a non-Outsider is chosen, they remain good and do not lose their ability."
+            },
+            {
+                "id": "goon",
+                "reason": "If the Alluring Fruit chooses the Goon, the Goon turns evil and loses their ability, and the Alluring Fruit does not become drunk."
+            }
+        ],
+        "preceedingFirstNightId": "godfather",
+        "firstNightReminder": "Show the Alluring Fruit all the Outsiders, then wake each in turn and tell them the Alluring Fruit is in play.",
+        "preceedingOtherNightId": "mezepheles",
+        "otherNightReminder": "Allow the Alluring Fruit to choose a known Outsider or shake their head.",
+        "flavor": "'Ease yourself, do you not have need of the blessing?'",
+        "hook": "The Alluring Fruit makes an Outsider into an extra evil player, and removes their ability.",
+        "summary": [
+            "If the Alluring Fruit is in play, there might be one more Outsider.",
+            "The Alluring Fruit learns who each Outsider is, but not which Outsider they are.",
+            "All Outsiders know that the Alluring Fruit is in play, but not who it is.",
+            "The Alluring Fruit may once choose one of the Outsiders they know to turn them evil and remove their ability.",
+            "The Outsider learns that the Alluring Fruit made them evil."
+        ],
+        "howtorun": "On the first night, wake the Alluring Fruit, and point to each player who is an Outsider. Then, wake each Outsider in turn, and show them the Alluring Fruit's token.<br>Each night besides the first, wake the Alluring Fruit, and allow them to shake their head or choose one of the players they learned. If they chose a player, wake that player, show \"This character chose you\", followed by the Alluring Fruit's token, and then \"You are\" followed by a thumbs down.",
+        "examples": [
+            "There would normally be 1 Outsider, but the Alluring Fruit is in play, and there are 2.",
+            "The Alluring Fruit learns two players, who are the Recluse and Saint. The Recluse and Saint both learn the Alluring Fruit is in play, and stay quiet.",
+            "The Alluring Fruit chooses the Klutz, who turns evil. When the Klutz dies, they don't need to choose a player, as they know they have no ability from the Alluring Fruit."
+        ],
+        "firstNight": 32.5,
+        "otherNight": 29.5
+    },
+    {
+        "id": "mgob_expresstraintohell",
+        "name": "Inevitable End",
+        "team": "minion",
+        "ability": "Each night*, if noone chose you with their ability last night or tonight, see the grimoire & choose a player: they are poisoned.",
+        "reminders": [
+            "Chosen",
+            "Strike 1",
+            "Poisoned",
+            "Poisoned",
+            "Poisoned"
+        ],
+        "special": [
+            {
+                "name": "grimoire",
+                "type": "signal",
+                "time": "night"
+            }
+        ],
+        "preceedingOtherNightId": "mathematician",
+        "otherNightReminder": "If the Inevitable End was not chosen tonight or last night, they wake to see the Grimoire and choose a player.",
+        "flavor": "When the time comes, the train will chug down the tracks and sound its mighty horn.",
+        "hook": "The Inevitable End poisons players if left alone for too long.",
+        "summary": [
+            "The Inevitable End only wakes if they were not chosen either tonight or last night.",
+            "The Inevitable End wakes after all other players, as a result.",
+            "The Inevitable End's poison lasts as long as the Inevitable End remains alive.",
+            "Nights that the Inevitable End sees the Grimoire still count as not being chosen last night, and as such they can choose multiple nights in a row."
+        ],
+        "howtorun": "During the night, if a player chooses the Inevitable End with their ability, mark the Inevitable End \"Chosen\", and remove \"Strike 1\" if applicable.<br>At the end of the night, if the Inevitable End is marked \"Chosen\", remove it. If unmarked, mark them \"Strike 1\". If marked \"Strike 1\", wake them, and show them the Grimoire. Allow them to choose a player; mark that player \"Poisoned\".",
+        "examples": [
+            "The Chambermaid chooses the Inevitable End on the 1st night. On the 2nd night, the Inevitable End does not wake.",
+            "The Devil's Advocate chooses the Inevitable End on the 2nd night. They do not wake on either of the 2nd or 3rd nights.",
+            "Nobody chooses the Inevitable End on the 1st or 2nd nights. At the end of the 2nd night, the Inevitable End wakes, sees the Grimoire, and poisons the Empath.",
+            "The Inevitable End wakes, sees the Grimoire, and poisons the Fortune Teller. Nobody chooses them the next night, so they wake then as well, poisoning the Snake Charmer."
+        ],
+        "otherNight": 92.5
+    },
+    {
+        "id": "mgob_thestruggleattheclimax",
+        "name": "Crimson March",
+        "team": "minion",
+        "ability": "Each night*, if you were nominated by good but not executed yesterday, you may choose a player: they learn this & if executed, their team loses.",
+        "reminders": [
+            "Chooses",
+            "Marching",
+            "Marching",
+            "Marching"
+        ],
+        "preceedingOtherNightId": "fearmonger",
+        "otherNightReminder": "If the Crimson March was nominated by good yesterday but wasn't executed, they may choose a player.",
+        "flavor": "Throwing away our old bodies, we all become one, infinitely continuing the red march.",
+        "hook": "The Crimson March forces a player to avoid execution if they themselves were nominated but not executed.",
+        "summary": [
+            "The Crimson March only wakes to choose a player if a good player nominated them yesterday.",
+            "The Crimson March does not have to choose a player, and may choose to not do so to hide its prescence.",
+            "If a chosen player is executed whilst the Crimson March lives, their team loses."
+        ],
+        "howtorun": "Each day, if the Crimson March is nominated by a good player, mark them \"Chooses\". If they are executed whilst marked \"Chooses\", remove the mark.<br>Each night besides the first, if the Crimson March is marked \"Chooses\", wake them, and allow them to choose a player (or shake their head). If they choose a player, mark that player \"Marching\". Then, wake them, and show them \"This character chose you\", followed by the Crimson March's token.<br>If the day's executee is marked \"Marching\" and the Crimson March lives, the executee's team loses.",
+        "examples": [
+            "The Crimson March was nominated by the Alchemist today, but the Fortune Teller was exected. That night, they wake and choose the Recluse.",
+            "The Crimson March chooses the Gambler. The Gambler learns this but, despite their claim to have been chosen, is still executed. Evil wins.",
+            "The Crimson March chooses the Lycanthrope. The Crimson March is executed the next day. The day after, the Lycanthrope is executed. The game continues.",
+            "The Crimson March is nominated by the Witch, and not executed. They do not wake to choose that night.",
+            "The Crimson March is nominated by the Empath and not executed on the first day. They wake, but choose to choose nobody."
+        ],
+        "otherNight": 27.5
+    },
+    {
+        "id": "mgob_dimensionalrefractionvarient",
+        "name": "Warped Space",
+        "team": "minion",
+        "ability": "Each Outsider's clockwise Townsfolk neighbour registers falsely to good abilities. [-1 or +1 Outsider]",
+        "reminders": [
+            "Warped",
+            "Warped",
+            "Warped",
+            "Warped"
+        ],
+        "flavor": "The only advice that can be given is to remain cautious and aware of your surroundings.",
+        "hook": "Warped Space makes each Outsider's clockwise Townsfolk neighbour register falsely, and alters the number of Outsiders by 1.",
+        "summary": [
+            "The Outsider count is modified by precisely 1; it cannot be +0.",
+            "The misregistration applies to alignment, character, or character type.",
+            "The misregistration cannot cause someone to appear alive/dead to abilities when they are not, likewise with drunk/poison (or sober/healthy).",
+            "The misregistration is only to good abilities, evil abilities are entirely unaffected."
+        ],
+        "howtorun": "When setting up the bag, either replace a Townsfolk with an Outsider, or vice versa. Once the tokens have been distributed, mark each Outsider's clockwise Townsfolk neighbour \"Warped\": they must register falsely to all good abilities.",
+        "examples": [
+            "The Snake Charmer is the Barber's clockwise neighbour, and is executed. The Undertaker learns they were Warped Space instead.",
+            "From the Mutant, in clockwise order, is Warped Space, the Imp, and the Washerwoman. When the Fortune Teller checks the Washerwoman and themselves, they learn a yes.",
+            "The Gambler is the Recluse's clockwise neighbour, and guesses themselves as the Gambler. The Recluse registers as a Minion & not an Outsider to the Warped Space that night, meaning that the Gambler does not die.",
+            "The Oracle is in play. Outsiders' clockwise neighbours cannot misregister alive/dead to abilities, and so they get information on the expected players."
+        ]
+    },
+    {
+        "id": "mgob_thesilentorchestra",
+        "name": "Music of Oblivion",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/MusicofOblivion.png?raw=true",
+        "team": "demon",
+        "ability": "Each night*, a quarter of the Townsfolk are poisoned & get false information (anticlockwise order). After day 5, evil wins.",
+        "reminders": [
+            "Poison Edge"
+        ],
+        "preceedingOtherNightId": "poisoner",
+        "otherNightReminder": "Another quarter of the Townsfolk is poisoned.",
+        "flavor": "From break and ruin, the most beautiful performance begins.",
+        "hook": "The Music of Oblivion spreads poison round the circle anti-clockwise, forcing information to be false.",
+        "summary": [
+            "After the Music of Oblivion acts on night X, there will be (X-1) * 25% of the Townsfolk poisoned, rounded up.",
+            "This means that on Night & Day 2, 25% will be poisoned; Night & Day 3, 50%; Night & Day 4, 75%; Night & Day 5, 100%",
+            "The number of Townsfolk becoming poisoned may vary across nights as a result.",
+            "The Music of Oblivion poisons Townsfolk beginning with its anti-clockwise Townsfolk neighbour, and moves round the Townsfolk anti-clockwise."
+        ],
+        "howtorun": "Every night besides the first, calculate how many Townsfolk should be poisoned by dividing the total number of Townsfolk by 4 and multiplying by the night number less one (use the current player marked \"Poison Edge\" if needs be), then round up. Mark the last Townsfolk of that many (counted anticlockwise from the Music of Oblivion) \"Poison Edge\" - all Townsfolk between them and the Music of Oblivion (inclusive) are poisoned and receive false information from their abilities. At the end of the day, if the Music of Oblivion's clockwise Townsfolk neighbour is marked \"Poison Edge\", evil wins.",
+        "examples": [
+            "The Music of Oblivion is at the top of the grimoire, and the Townsfolk going round clockwise are the Empath, Monk, Undertaker, and Grandmother. On the 2nd night, the Grandmother becomes Poisoned; on the 3rd, the Undertaker; on the 4th, the Monk; on the 5th, the Empath.",
+            "There are 6 Townsfolk in the game. On the 2nd night, 2 become poisoned. On the 3rd, only 1 does. On the 4th, 2 more do. On the 5th, the final Townsfolk does.",
+            "The Empath is the Music of Oblivion's anti-clockwise neighbour. On the 1st night, they learn a correct 1. On the 2nd, they become poisoned & get false info, so cannot learn a correct 1 - they learn a 0 instead."
+        ],
+        "otherNight": 14.5
+    },
+    {
+        "id": "mgob_helixoftheend",
+        "name": "Helix of Desolation",
+        "team": "demon",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/HelixofDesolation.png?raw=true",
+        "ability": "On day 3, all Minions become Helix of Desolation & from then on, players who do not vote for a nomination on another die & if no evil died today, evil wins.",
+        "reminders": [
+            "1st Day",
+            "2nd Day",
+            "Helix"
+        ],
+        "preceedingOtherNightId": "mgob_expresstraintohell",
+        "otherNightReminder": "If it is the 3rd night, all Minions become Helix of Desolation and learn this.",
+        "flavor": "The tower is touched by the sky, and nothing will remain on the ground.",
+        "hook": "The Helix of Desolation forces players to vote for fear of instant death.",
+        "summary": [
+            "At the end of the 3rd night, all Minions become Helices of Desolation.",
+            "When counting votes, if the Storyteller reaches a player who does not have their hand up, they are immediately killed.",
+            "The votes required for a nomination cannot go down during the nomination itself, even if players die to not voting.",
+            "The Helix of Desolation can cause a nomination to need fewer votes than its predecessor, assuming the predecessor did not pass.",
+            "On or after the 3rd day, if no evil player dies in a day, evil wins.",
+            "An evil player dying by any means, Helix of Desolation ability or execution, counts to prevent the win condition.",
+            "To run this asynchronously, run it that a player must vote for all previous nominations to vote for an existing nomination, unless they wish to use their dead vote. Additionally, give extra time when a nomination is made, so that all players have time to vote or not."
+        ],
+        "howtorun": "When the day ends, if the Helix of Desolation is unmarked, mark them \"1st Day\". If they're marked \"1st Day\", remove it and mark them \"2nd Day\". At night, if they're marked \"2nd Day\", remove it and add \"Helix\" to the Grimoire. Then, wake each Minion. Show the \"You are\" token, followed by the Helix of Desolation token, and replace their token in the Grimoire. During the day, if \"Helix\" is in the Grimoire, when counting votes for a nomination, if a player does not vote, announce that they die; the votes required does not change for that nomination.",
+        "examples": [
+            "On the 3rd night, the Boffin becomes the Helix of Desolation.",
+            "On the 3rd day, a Helix of Desolation nominates the Empath: Going round the circle, the High Priestess, General, Recluse, Helix of Desolation vote, but the Clockmaker, Helix of Desolation, and Empath do not: The Storyteller counts 1, 2, 3, 4, dead, dead, dead.",
+            "On the 3rd day, a Helix of Desolation is executed. The game continues to the 4th night.",
+            "On the 3rd day, all Helix of Desolations vote for each nomination and thus survive, and the General is executed: evil wins.",
+            "On the 4th day, 7 players are alive. On the first nomination for that day, 3 players vote, but 4 do not. Despite those 4 dying, the nominee is not about to die, because there were 4 required when the nomination began."
+        ],
+        "otherNight": 92.75
+    },
+    {
+        "id": "mgob_apocalypsebird",
+        "name": "Paradox of Mercy",
+        "team": "demon",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/ParadoxOfMercy.png?raw=true",
+        "ability": "After day 3, if all Minions live, evil wins. After day 5, evil wins.",
+        "reminders": [
+            "1st Day",
+            "2nd Day",
+            "Minions Failed"
+        ],
+        "jinxes": [
+            {
+                "id": "devilsadvocate",
+                "reason": "If the Paradox of Mercy is in play, the Devil's Advocate may not choose themselves on the 3rd night."
+            }
+        ],
+        "flavor": "Then, in the middle of all the chaotic cries, someone shouted: 'It's the beast! A big, scary monster lives in the black, dusky forest!'",
+        "hook": "The Paradox of Mercy wins if all Minions live after day 3, or after day 5.",
+        "summary": [
+            "The Paradox of Mercy requires all Minions to be alive at the end of day 3 to win early.",
+            "If the Paradox of Mercy is executed on the 3rd day, good wins as normal."
+        ],
+        "howtorun": "When the day ends, if the Paradox of Mercy is unmarked, mark them \"1st Day\". If they're marked \"1st Day\", remove it and mark them \"2nd Day\". If they're marked \"2nd Day\" and not \"Minions Failed\", check if all Minions are alive: if so, evil wins, otherwise mark them \"Minions Failed\" and \"1st Day\". If they are marked both \"2nd Day\" and \"Minions Failed\", evil wins.",
+        "examples": [
+            "After the 3rd day, both the Baron and the Mastermind are alive: evil wins.",
+            "On the 3rd day, the Devil's Advocate is executed and dies. The game continues.",
+            "On the 3rd day, the Paradox of Mercy is executed and dies. Good wins.",
+            "After the 3rd day, the Minion is dead. However, good fails to execute the Paradox of Mercy by the end of the 5th day, and evil wins."
+        ]
+    },
+    {
+        "id": "mgob_whitenight",
+        "name": "Blessing of Perfidy",
+        "team": "demon",
+        "image": "https://github.com/QuorglepleegJr/PublishedBotCIcons/blob/master/BlessingOfPerfidy.png?raw=true",
+        "ability": "After day 5, all but you are poisoned, & good wins if & only if the Storyteller is executed tomorrow. Good players killed by execution bring this 1 day sooner.",
+        "reminders": [
+            "Distortion Clock"
+        ],
+        "flavor": "Rise, my servants. Rise and serve me.",
+        "hook": "The Blessing of Perfidy forces good players to execute the Storyteller on the 6th day... but this comes closer when a wrong execution is made.",
+        "summary": [
+            "The Blessing of Perfidy has a single day upon which good can only win if they execute the Storyteller, and loses if they don't.",
+            "Even if the Blessing of Perfidy is executed on that day, good still loses: they win if and only if they execute the Storyteller.",
+            "This day is by default the 6th, but every good player that dies by execution brings it one closer.",
+            "The day cannot be skipped by any means, and if it would be, it is simply always the soonest possible day.",
+            "As per usual, if the Storyteller is executed without it being the correct day, evil wins."
+        ],
+        "howtorun": "On the first night, place the \"Distortion Clock\" reminder 5 steps anticlockwise of the Blessing of Perfidy.<br>At the end of each day, move this one step clockwise, or two if a good player died by execution today. If the \"Distortion Clock\" is on the Blessing of Perfidy (place it onto them if it goes past), all other players are poisoned. At the end of the next day, if the Storyteller was executed, good wins, otherwise evil does.",
+        "examples": [
+            "No good players died by execution. On the sixth night, the Empath learns a 1 when both their alive neighbours are good, and the Acrobat does not die when they choose the Drunk.",
+            "No good players died by execution. On the sixth day, the Blessing of Perfidy is executed. Evil wins.",
+            "1 good player died by execution. On the fifth day, the Storyteller was executed. Good wins."
+        ]
+    }
+]
