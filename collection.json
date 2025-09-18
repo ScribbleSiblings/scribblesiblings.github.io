@@ -33,7 +33,7 @@
         ],
         "flavor": "Happy Pride :3",
         "hook": "June allows for one couple to pair up until the game ends, but one mismatch ends in disaster.",
-        "howtorun": "[
+        "howtorun": [
             "Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed.",
             "If a player were to swap alignments after they are paired via June, they do not divorce, and they continue to be paired.",
         ],
