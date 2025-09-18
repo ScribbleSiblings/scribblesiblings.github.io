@@ -1,2 +1,2 @@
-# QuorglepleegJr.github.io
-Hosting my BotC Character Collection, Fragments' Insanity. I don't use a symbol for my characters or particularly care for credit, so feel free to use them if you don't hate them. Additionally, if you want to use the (very bad) code in this repository alongside the characters, you're more than welcome to!
+# scribblesiblings.github.io
+Hi! I stole this code from Quorg. This is my homebrew collection! A lot still needs to be added, but otherwise this is where I'll be storing things. Current project: Scribbles' Year of BOTC
