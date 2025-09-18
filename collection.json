@@ -1,0 +1,80 @@
+[
+    {
+        "id": "_meta",
+        "name": "Scribbles' Homebrews",
+        "author": "Scribble Siblings",
+        "almanac": "https://scribblesiblings.github.io/"
+    },
+    {
+        "id": "sc_home_january",
+        "name": "January",
+        "team": "fabled",
+        "ability": "Players can\u2019t choose the same player or character twice (if possible). If not the final day, players can\u2019t nominate the same player twice.",
+        "flavor": "Your past mistakes are not to be made again. Look to the future, and you'll find something anew!",
+        "hook": "January forces players to try new things.",
+        "summary": [
+            "While January is in-play, players may not choose the same player twice to learn info about, protect, or kill. even if their ability failed previously.",
+            "Players may also not nominate the same players twice, until the final day. If they wish to nominate someone, it is their only chance to do so!"
+        ],
+        "howtorun": "Before the game starts, announce that January is in-play. Then, grab a piece of paper. Whenever a player chooses another, or nominates them, mark this down. If they try to do this again, prompt them that they cannot, and prompt them to choose differntly.",
+        "examples": [
+            "Belos is the Imp. He kills Caleb at night, and then tries to sink a kill later by choosing Caleb again. The Storyteller shakes their head no, and prompts him to choose a new player.",
+            "Miles Edgeworth nominates Pheonix Wright, and Pheonix Wright is not executed. Tomorrow, Miles accuses Pheonix again, but because Miles had alrady nominated Pehonix yesterday, he cannot again, and the Storyteller asks him if he would like to nominate someone else."
+        ]
+    },
+    {
+        "id": "sc_home_june",
+        "name": "June",
+        "team": "fabled",
+        "ability": "Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed.",
+        "reminders": [
+            "Pair",
+            "Pair"
+        ],
+        "flavor": "Happy Pride :3",
+        "hook": "June allows for one couple to pair up until the game ends, but one mismatch ends in disaster.",
+        "howtorun": "Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed. If a player were to swap alignments after they are paired via June, they do not divorce, and they continue to be paired.",
+        "examples": [
+            "Susie and Noelle are both on the good team, and wish to pair with one-another. Because they are both Allies, they wake with each other until the game ends, and can help coordinate with each others' abilities.",
+            "Tenna and Spamton are both on the Evil team, and wish to pair with one-another. Because they are both Allies, they wake up with each other until the game ends, and help coordinate how to destroy those dirty Lightners.",
+            "Odalia and Alador wish to pair with one-another, but Alador is good while Odalia is evil. Because they are not on the same team, the two's attempt fails, and are now in battle with one-another until the other players choose someone to execute."
+        ],
+        "tip": "Optional rule: those who are successfully paired via June move to neighbor one another, and in addition, 0those who failed to pair via June move sit across from one another. "
+    },
+    {
+        "id": "sc_home_july",
+        "name": "July",
+        "team": "fabled",
+        "ability": "The first time the Demon is killed by execution, if 5 or more players (excluding Travellers) are alive, an alive Minion becomes the Demon.",
+        "reminders": [
+            "Is the Demon"
+        ],
+        "preceedingOtherNightId": "scarletwoman",
+        "otherNightReminder": "If the Demon was executed, mark a Minion with a IS THE DEMON reminder. Wake that Minion, show them the YOU ARE token, then the Demon token. Put the Demon to sleep, and wake them as needed.",
+        "flavor": "Caesar!! Oh no... Who killed him...",
+        "hook": "July allows the evil team to have a heir inherit the throne... once.",
+        "howtorun": "If the Demon is executed, and 5 or more players are alive (counting the player who died), put the IS THE DEMON reminder. At dusk, wake the Minion chosen: show them the YOU ARE token, then the Demon token they became. From now on, treat them as if they are that Demon, and not as that Minion.",
+        "examples": [
+            "Julius, the Vortox, is executed. That night, Agustus the Baron becomes the new Demon, as Julius was executed the day before.",
+            "Belos, the Imp, is shot by Luz, the Slayer. The game ends, because Belos was not executed, and was killed by the Slayer."
+        ],
+        "tip": "If there is a Scarlet Woman on-script and in-play, I'd recommend that you the Scarlet Woman ability procs first, and July doesn't!",
+        "otherNight": 30.5
+    },
+    {
+        "id": "sc_home_august",
+        "name": "August",
+        "team": "fabled",
+        "ability": " On the 1st night, Minions learn each others\u2019 characters, then choose 1, they become a Demon. [No Demon, +1 Minion]",
+        "preceedingFirstNightId": "magician",
+        "firstNightReminder": "Wake all Minions, show them each others characters. Allow them to point to one another until a unanimous choice is made. Put the other Minions to sleep, show the newly chosen Demon the YOU ARE token, then the Demon token of your choosing. Proceed with Demon info as normal.",
+        "flavor": "Julius is dead! We must find ourselves a new emperor! Augustus... you wouldn't mind... right?",
+        "hook": "August allows for the Evil team to choose which Minion ability they wish to have the least, or to have the best player they can be the Demon.",
+        "howtorun": "When making the bag, do not add a Demon, and add all setup effects for all Minions you added. On the first night, wake all the Minions for Minion info. Show them each others' characters, then allow them to point to one another and (attempt to) communicate who should be the Demon. After the decision has become unanimous, put the other Minions to sleep, and show the newly appointed Demon their new bluffs, and other Demon info, like a Boffin or Lunatic, if in-play. Do not use the setup effects of whatever Demon was just added.",
+        "examples": [
+            "Belos the Devil's Advocate, Kikimora the Organ Grinder, and Hunter the Spy are all Minions for this game. On the 1st night, they learn all of this, and choose to have Belos be the Demon, and Belos becomes the Imp."
+        ],
+        "tip": "If there is a Poppy Grower or Magician on the Script, I'd recommend you Jinx them with August! The game will function overall better that way.",
+        "firstNight": 13.5
+    }
+]

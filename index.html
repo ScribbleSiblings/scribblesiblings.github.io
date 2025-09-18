@@ -1,0 +1,600 @@
+
+        
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        html,body{height:100%;font-size:16px;scroll-behavior:smooth;}
+        body{
+            background:#333;
+            color:#eee;
+            font-family:'PT Serif', serif;
+            margin:0;
+            text-align:justify;
+            scrollbar-color:#999 #666;
+            scrollbar-width:thin;
+            overflow-x:hidden;
+        }
+        table{
+            border:1px solid rgba(51,51,51,0.35);
+            margin:0 auto;
+            background-color:rgba(255,255,255,0.15);
+        }
+        a{text-decoration:none;color:#339}
+        a:hover{text-decoration:underline;color:#66c}
+        tbody tr:nth-child(even), th{background-color:rgba(255,255,255,0.65);}
+        td,th{padding:4px;}
+        *::-webkit-scrollbar {
+            width:10px;
+            height:10px;
+        }
+        *::-webkit-scrollbar-track {
+            background:#666;
+        }
+        *::-webkit-scrollbar-thumb {
+            background:#999;
+        }
+        h1, h2, h3, h4, h5, h6, h7 {
+            margin:0.2rem 0 0.2rem 0;
+            font-family: 'Nova Script', cursive;
+            text-transform:uppercase;
+        }
+        h1, h2{font-size:2.4rem}
+        h3, h4, h5, h6, h7 {font-size:1.2rem}
+        hr{width:80%;border:1px solid}
+        ol.nav {
+            flex:0 0 124px;
+            font-family:'Roboto Condensed',sans-serif;
+            font-size:1rem;
+            list-style:none;
+            margin:0;
+            padding:1vh 0 0 0;
+            overflow-x:hidden;
+            overflow-y:auto;
+            position:fixed;
+            height:100vh;
+            z-index:1;
+            background:#333;
+        }
+        ol.nav > li {
+            padding-left: 0.2rem;
+        }
+        .nav a{
+            text-align:center;
+            vertical-align:bottom;
+            text-decoration:none;
+            color:#eee;
+        }
+        .nav a:hover{
+            text-decoration:underline;
+            box-shadow: 0 0 0.1em #333;
+        }
+        .almanac-row{
+            max-width:924px;
+            overflow-x: hidden;
+            margin:auto;
+        }
+        .almanac-viewport {
+            list-style:none;
+            margin:0;
+            padding:0;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-flow: column nowrap;
+            overflow-x:hidden;
+            max-width:800px;
+            margin-left:124px;
+        }
+        .page {
+            list-style:none;
+            flex: none;
+            margin:0 0.6rem 0.6rem 0;
+            position:relative;
+        }
+        .page img{
+            max-width:90vw;
+        }
+        .page-contents{
+            margin:auto;
+            padding:4.8rem 3.7rem;
+            display:flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: 19.2rem;
+            background-position: top;
+            background-position-y: 2.4rem;
+            color:#333;
+        }
+        .spacer{height:11rem}
+        #synopsis > .page-contents > p,
+        #overview > .page-contents > p,
+        #changelog > .page-contents > p {
+            width:60%;
+        }
+        .donate {
+            list-style:none;
+            flex: none;
+            position:relative;
+            text-align:center
+        }
+
+        /*paper effect*/
+        .page::before{
+            content:"";
+            position:absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            box-shadow:0 0 4.5rem #966e49 inset;
+            z-index:-1;
+            background-color:#eadbca;
+        }
+
+        .generated-by{
+        list-style:none;
+        padding:0 0 1rem 0;
+        text-align:center;
+        font-size:0.8rem;
+        flex:none;
+        font-family:'Roboto Condensed',sans-serif;
+        }
+        .generated-by a{
+            color:#ccf
+        }
+        .team{
+            font-family: 'MedievalSharp', cursive;
+            writing-mode:vertical-rl;
+            text-orientation: upright;
+            text-transform: uppercase;
+            position: absolute;
+            top: 4.8rem;
+            left: 3.2rem;
+            letter-spacing:-0.4rem;
+            width:unset;
+            font-size:1.8rem;
+            margin:0;
+        }
+        p{
+            margin-top:0.4rem;
+            margin-bottom:0.4rem;
+        }
+        .inline-logo{
+            float:left;
+            margin:-0.4rem 0.4rem 0 -3.2rem;
+            width:6.4rem;
+        }
+        #synopsis > .page-contents{
+            font-family: 'MedievalSharp', cursive;
+            color:#933;
+        }
+        .ability{
+            width:60%;
+            font-family:'Roboto Condensed',sans-serif;
+            text-align:center;
+        }
+        .flavor{
+            width:60%;
+            font-style:italic;
+            color:#704c29;
+            text-align:center;
+            font-size:0.8rem;
+        }
+        .overview, .example, .how-to-run, .attribution {
+            width:80%;
+        }
+        .tip > p {
+            width:80%;
+            color:#933;
+            padding:20px;
+            background:rgba(255, 255, 255, 0.35);
+            border:4px solid #933;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        /* big letter */
+        #synopsis > .page-contents > p:nth-child(1)::first-letter {
+            font-size:2rem;
+        }
+        .overview > p:nth-child(1)::first-letter {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 5rem;
+            float:left;
+            line-height:0.7;
+            margin: 0 0.3rem 0 -0.4rem;
+        }
+        .overview > p:nth-child(1) {
+            min-height: 3.5rem;
+        }
+
+        /* bullets */
+        .overview > p + p {
+            position:relative;
+            margin-left:1.3rem;
+        }
+        .overview > p + p::before {
+            content:'â€¢';
+            font-size:1.4rem;
+            position:absolute;
+            line-height:0.9;
+            top:0;
+            left:-1.4rem;
+        }
+        .page::before{background-image:url('/img/paper.png');}
+
+        .townsfolk h1,
+        .townsfolk h2,
+        .townsfolk h3,
+        .townsfolk h4,
+        .townsfolk h5,
+        .townsfolk h6,
+        .townsfolk .ability,
+        .townsfolk .team,
+        .townsfolk .overview > p:nth-child(1)::first-letter,
+        .townsfolk .overview > p + p::before {
+            color:#003fb2;
+        }
+        .townsfolk hr {
+            border-color:#003fb2;
+        }
+        .nav > li.townsfolk {
+            background: #1f65ff55;
+        }
+
+        .outsider h1,
+        .outsider h2,
+        .outsider h3,
+        .outsider h4,
+        .outsider h5,
+        .outsider h6,
+        .outsider .ability,
+        .outsider .team,
+        .outsider .overview > p:nth-child(1)::first-letter,
+        .outsider .overview > p + p::before {
+            color:#006893;
+        }
+        .outsider hr {
+            border-color:#006893;
+        }
+        .nav > li.outsider {
+            background: #46d5ff55;
+        }
+
+        .minion h1,
+        .minion h2,
+        .minion h3,
+        .minion h4,
+        .minion h5,
+        .minion h6,
+        .minion .ability,
+        .minion .team,
+        .minion .overview > p:nth-child(1)::first-letter,
+        .minion .overview > p + p::before {
+            color:#9f0000;
+        }
+        .minion hr {
+            border-color:#9f0000;
+        }
+        .nav > li.minion {
+            background: #ff690055;
+        }
+
+        .demon h1,
+        .demon h2,
+        .demon h3,
+        .demon h4,
+        .demon h5,
+        .demon h6,
+        .demon .ability,
+        .demon .team,
+        .demon .overview > p:nth-child(1)::first-letter,
+        .demon .overview > p + p::before {
+            color:#940000;
+        }
+        .demon hr {
+            border-color:#940000;
+        }
+        .nav > li.demon {
+            background: #ce010055;
+        }
+
+        .traveler h1,
+        .traveler h2,
+        .traveler h3,
+        .traveler h4,
+        .traveler h5,
+        .traveler h6,
+        .traveler .ability,
+        .traveler .team,
+        .traveler .overview > p:nth-child(1)::first-letter,
+        .traveler .overview > p + p::before {
+            color:#553412;
+        }
+        .traveler hr {
+            border-color:#553412;
+        }
+        .nav > li.traveler {
+            background: linear-gradient(90deg, #1f65ff55 49%,#ce010055 51%);
+        }
+
+        .fabled h1,
+        .fabled h2,
+        .fabled h3,
+        .fabled h4,
+        .fabled h5,
+        .fabled h6,
+        .fabled .ability,
+        .fabled .team,
+        .fabled .overview > p:nth-child(1)::first-letter,
+        .fabled .overview > p + p::before {
+            color:#553412;
+        }
+        .fabled hr {
+            border-color:#553412;
+        }
+
+        .jinxes h1,
+        .jinxes h2,
+        .jinxes h3,
+        .jinxes h4,
+        .jinxes h5,
+        .jinxes h6,
+        .jinxes .ability,
+        .jinxes .team,
+        .jinxes .overview > p:nth-child(1)::first-letter,
+        .jinxes .overview > p + p::before {
+            color:#333;
+        }
+        .jinxes hr {
+            border-color:#333;
+        }
+
+        .nav > li.fabled {
+            background: #ffe91f55;
+        }
+
+        .characterImage {
+            max-width:22rem;
+            height:22rem;
+            margin-top: -2rem;
+            margin-bottom: -6.5rem;
+        }
+        .nightOrder {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:5rem;
+            margin:1rem;
+        }
+        .nightOrderList {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap:6px;
+            align-items: center;
+        }
+        .nightOrderListName {
+            font-size:1.2rem;
+        }
+        .nightOrderListIcon {
+            max-width: 60px;
+            height: 60px;
+            margin-bottom: -20px;
+        }
+        .firstNightColumn {
+            align-self: start;
+        }
+        .otherNightsColumn {
+            /*transform:rotate(180deg);*/
+            align-self: end;
+        }
+
+
+        @media only screen and (max-width:799px){
+            .page-contents{
+                padding:8vw;
+                background-position-y:1vw;
+                background-size:48vw;
+            }
+            .spacer{
+                height:26vw;
+            }
+            html{font-size:16px;}
+            .flavor p{font-size:0.875rem;}
+
+            /* big letter and bullets*/
+            .overview > p:nth-child(1)::first-letter {font-size: 4rem;}
+
+            h1, h2{font-size:2.25rem}
+            h3, h4, h5, h6, h7 {font-size:1.125rem}
+            .team{
+                font-size:1.25rem;
+                letter-spacing:-0.25rem;
+                left:8vw;
+                top:8vw;
+            }
+        }
+        @media only screen and (max-width:650px){
+            .page {
+                margin-right:0;
+            }
+            .page-contents{
+                background-size:57vw;
+            }
+            .spacer{
+                height:31vw;
+            }
+            ol.nav {
+                overflow-x: auto;
+                overflow-y: hidden;
+                width:100%;
+                display:flex;
+                height:unset;
+                padding: 0.25rem 0;
+            }
+            .nav li{
+                flex:1 0 auto;
+                margin:0 5px;
+            }
+            .almanac-viewport{
+                margin-left:0px;
+                margin-top:45px;
+            }
+            #synopsis > .page-contents > p,
+            #overview > .page-contents > p,
+            #changelog > .page-contents > p {width:100%}
+            .team{
+                font-size:3vw;
+                letter-spacing:0;
+                top:10vw;
+            }
+            .ability, .flavor, .overview, .example, .how-to-run, .attribution{
+                width:80vw;
+            }
+            .tip > p{width:75vw;}
+            .inline-logo{margin-left:0}
+            .nightOrder {gap:1rem;}
+        }
+        @media only screen and (max-width:450px){
+            h1, h2{font-size:8vw}
+            h3, h4, h5, h6, h7 {font-size:4vw}
+            .nightOrderListIcon{
+                height: 6vw;
+                margin-bottom: -2vw;
+                margin-right: -1vw;
+            }
+        }
+        @media only screen and (max-width:400px){
+            h1, h2{font-size:32px}
+            h3, h4, h5, h6, h7 {font-size:16px}
+            .nightOrderListIcon{
+                height: 24px;
+                margin-bottom: -8px;
+                margin-right: 0;
+            }
+            .nightOrder{display:block}
+            .nightOrderList{margin-bottom:1rem}
+        }
+
+        .center{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+<title>Scribbles' Homebrews</title>
+</head>
+<body>
+<div class="almanac-row">
+<ol class="nav">
+<li class="fabled"><a href="#sc_home_january">January</a></li>
+<li class="fabled"><a href="#sc_home_june">June</a></li>
+<li class="fabled"><a href="#sc_home_july">July</a></li>
+<li class="fabled"><a href="#sc_home_august">August</a></li>
+<a href="#nightOrder">Night Order</a></li>
+</ol>
+<ol class="almanac-viewport">
+<li class="page" id="sc_home_january">
+<div class="page-contents fabled">
+<h2>January</h2>
+<p class="ability">Players can’t choose the same player or character twice (if possible). If not the final day, players can’t nominate the same player twice.</p>
+<hr>
+<div class="flavor">Your past mistakes are not to be made again. Look to the future, and you'll find something anew!</div>
+<div class="overview"><p>January forces players to try new things.</p>
+<ul>
+<li>While January is in-play, players may not choose the same player twice to learn info about, protect, or kill. even if their ability failed previously.</li>
+<li>Players may also not nominate the same players twice, until the final day. If they wish to nominate someone, it is their only chance to do so!</li>
+</ul>
+</div>
+<h3>Examples</h3>
+<div class="example">
+<p>Belos is the Imp. He kills Caleb at night, and then tries to sink a kill later by choosing Caleb again. The Storyteller shakes their head no, and prompts him to choose a new player.</p>
+<p>Miles Edgeworth nominates Pheonix Wright, and Pheonix Wright is not executed. Tomorrow, Miles accuses Pheonix again, but because Miles had alrady nominated Pehonix yesterday, he cannot again, and the Storyteller asks him if he would like to nominate someone else.</p>
+</div>
+<h3>How to Run</h3>
+<div class="how-to-run">
+<p>Before the game starts, announce that January is in-play. Then, grab a piece of paper. Whenever a player chooses another, or nominates them, mark this down. If they try to do this again, prompt them that they cannot, and prompt them to choose differntly.</p>
+</div>
+<p class="team">Fabled</p></div>
+</li>
+<li class="page" id="sc_home_june">
+<div class="page-contents fabled">
+<h2>June</h2>
+<p class="ability">Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed.</p>
+<hr>
+<div class="flavor">Happy Pride :3</div>
+<div class="overview"><p>June allows for one couple to pair up until the game ends, but one mismatch ends in disaster.</p>
+</div>
+<h3>Examples</h3>
+<div class="example">
+<p>Susie and Noelle are both on the good team, and wish to pair with one-another. Because they are both Allies, they wake with each other until the game ends, and can help coordinate with each others' abilities.</p>
+<p>Tenna and Spamton are both on the Evil team, and wish to pair with one-another. Because they are both Allies, they wake up with each other until the game ends, and help coordinate how to destroy those dirty Lightners.</p>
+<p>Odalia and Alador wish to pair with one-another, but Alador is good while Odalia is evil. Because they are not on the same team, the two's attempt fails, and are now in battle with one-another until the other players choose someone to execute.</p>
+</div>
+<h3>How to Run</h3>
+<div class="how-to-run">
+<p>Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed. If a player were to swap alignments after they are paired via June, they do not divorce, and they continue to be paired.</p>
+</div>
+<div class="tip">
+<p>Optional rule: those who are successfully paired via June move to neighbor one another, and in addition, 0those who failed to pair via June move sit across from one another. </p>
+</div>
+<p class="team">Fabled</p></div>
+</li>
+<li class="page" id="sc_home_july">
+<div class="page-contents fabled">
+<h2>July</h2>
+<p class="ability">The first time the Demon is killed by execution, if 5 or more players (excluding Travellers) are alive, an alive Minion becomes the Demon.</p>
+<hr>
+<div class="flavor">Caesar!! Oh no... Who killed him...</div>
+<div class="overview"><p>July allows the evil team to have a heir inherit the throne... once.</p>
+</div>
+<h3>Examples</h3>
+<div class="example">
+<p>Julius, the Vortox, is executed. That night, Agustus the Baron becomes the new Demon, as Julius was executed the day before.</p>
+<p>Belos, the Imp, is shot by Luz, the Slayer. The game ends, because Belos was not executed, and was killed by the Slayer.</p>
+</div>
+<h3>How to Run</h3>
+<div class="how-to-run">
+<p>If the Demon is executed, and 5 or more players are alive (counting the player who died), put the IS THE DEMON reminder. At dusk, wake the Minion chosen: show them the YOU ARE token, then the Demon token they became. From now on, treat them as if they are that Demon, and not as that Minion.</p>
+</div>
+<div class="tip">
+<p>If there is a Scarlet Woman on-script and in-play, I'd recommend that you the Scarlet Woman ability procs first, and July doesn't!</p>
+</div>
+<p class="team">Fabled</p></div>
+</li>
+<li class="page" id="sc_home_august">
+<div class="page-contents fabled">
+<h2>August</h2>
+<p class="ability"> On the 1st night, Minions learn each others’ characters, then choose 1, they become a Demon. [No Demon, +1 Minion]</p>
+<hr>
+<div class="flavor">Julius is dead! We must find ourselves a new emperor! Augustus... you wouldn't mind... right?</div>
+<div class="overview"><p>August allows for the Evil team to choose which Minion ability they wish to have the least, or to have the best player they can be the Demon.</p>
+</div>
+<h3>Examples</h3>
+<div class="example">
+<p>Belos the Devil's Advocate, Kikimora the Organ Grinder, and Hunter the Spy are all Minions for this game. On the 1st night, they learn all of this, and choose to have Belos be the Demon, and Belos becomes the Imp.</p>
+</div>
+<h3>How to Run</h3>
+<div class="how-to-run">
+<p>When making the bag, do not add a Demon, and add all setup effects for all Minions you added. On the first night, wake all the Minions for Minion info. Show them each others' characters, then allow them to point to one another and (attempt to) communicate who should be the Demon. After the decision has become unanimous, put the other Minions to sleep, and show the newly appointed Demon their new bluffs, and other Demon info, like a Boffin or Lunatic, if in-play. Do not use the setup effects of whatever Demon was just added.</p>
+</div>
+<div class="tip">
+<p>If there is a Poppy Grower or Magician on the Script, I'd recommend you Jinx them with August! The game will function overall better that way.</p>
+</div>
+<p class="team">Fabled</p></div>
+</li>
+<li class="page" id="nightOrder">
+<div class="page-contents">
+<h2>Night Order</h2>
+<div class="nightOrder">
+<div class="firstNightColumn">
+<h3>First Night</h3>
+<div class="nightOrderList"></div></div>
+<div class="otherNightsColumn">
+<h3>Other Nights</h3>
+<div class="nightOrderList"><div></div><div class="nightOrderListName">
+July</div>
+</div></div></div></div></li></ol></div></body></html>
