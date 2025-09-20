@@ -46,6 +46,30 @@
         ]
     },
     {
+        "id": "sc_home_april",
+        "name": "April",
+        "team": "fabled",
+        "ability": "The 1st time 2 live, the 1st Demon kill of each alignment are ressurected. Until then, the evil lives but registers as dead.",
+        "reminders": [
+            "1st Chosen Good",
+            "1st Chosen Evil - Alive",
+            "Revives Tonight",
+            "Revives Tonight"
+        ]
+        "preceedingOtherNightId": "kazali",
+        "otherNightReminder": "The first time the Demon kills a good and evil player, mark them with the 1ST CHOSEN GOOD or 1ST CHOSEN EVIL - ALIVE reminder. when 2 players live, remove their shrouds and treat them as alive players once more. If the evil player is killed, they are secretly alive, no matter if they are executed afterwards until they are \"revived\"",
+        "flavor": "\"But you died!\" \"My death was greatly exaggerated.\"",
+        "hook": "April allos for second chances, sometime after one's death.",
+        "summary": [
+            "The first players of each alignment to be chosen by the Demon are marked, and when only two players live, they get revived immidiately. If they would act again, they do.",
+            "The first evil player to be chosen continues to act as normal, and is alive for win conditions while \"dead\""
+        ],
+        "howtorun": "At the start of the game, announce that April is in play. When the first good and evil players die, mark them with the 1ST CHOSEN GOOD or 1ST CHOSEN EVIL - ALIVE reminders. When 2 players live, revive them.",
+        "examples": [
+        "Luz is killed by Belos the Imp on Night 2. When 2 players live, she revives and kicks his ass.",
+        ]
+    },
+    {
         "id": "sc_home_june",
         "name": "June",
         "team": "fabled",
@@ -62,7 +86,7 @@
             "Tenna and Spamton are both on the Evil team, and wish to pair with one-another. Because they are both Allies, they wake up with each other until the game ends, and help coordinate how to destroy those dirty Lightners.",
             "Odalia and Alador wish to pair with one-another, but Alador is good while Odalia is evil. Because they are not on the same team, the two's attempt fails, and are now in battle with one-another until the other players choose someone to execute."
         ],
-        "tip": "Optional rule: those who are successfully paired via June move to neighbor one another, and in addition, 0those who failed to pair via June move sit across from one another. "
+        "tip": "Optional rule: those who are successfully paired via June move to neighbor one another, and in addition, 0those who failed to pair via June move sit across from one another."
     },
     {
         "id": "sc_home_july",
@@ -102,3 +126,4 @@
     }
 
 ]
+
