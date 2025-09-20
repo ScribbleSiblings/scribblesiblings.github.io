@@ -23,6 +23,29 @@
         ]
     },
     {
+        "id": "sc_home_february",
+        "name": "February",
+        "team": "fabled",
+        "ability": "Once per game, if more than 5 live, the Demon must choose thrice & exactly 1 evil.",
+        "reminders": [
+            "Chosen Good",
+            "Chosen Evil",
+            "Ability Used"
+        ],
+        "preceedingOtherNightId": "lyncanthrope",
+        "otherNightReminder": "Prompt the Demon if they would like to choose 3 players. If this is the last time they can, they must. If so, mark the additional good chosen players with the CHOSEN GOOD reminder, and the chosen evil player with the CHOSEN EVIL reminder. put the Demon to sleep after their ability is finished.",
+        "flavor": "Love is in the air? WRONG! NEUROTOXIN!",
+        "hook": "February prevents games from going too long.",
+        "summary": [
+            "If February is in play, the Demon MUST use its ability once per game. If it is the last day they can do so, prompt them.",
+            "With February, anyone can be chosen, including dead players."
+        ],
+        "howtorun": "Before the game starts, announce that February is in-play. Starting on the Second night, the Demon may choose to choose 3 players. This must happen once per game. If so, they must choose 1 & only 1 evil player.",
+        "examples": [
+            "King Spade is the Imp. On the 2nd night, King Spade chooses to choose Lancer, the Spy, Ralsei the Monk, and Susie the Slayer."
+        ]
+    },
+    {
         "id": "sc_home_june",
         "name": "June",
         "team": "fabled",
@@ -33,7 +56,7 @@
         ],
         "flavor": "Happy Pride :3",
         "hook": "June allows for one couple to pair up until the game ends, but one mismatch ends in disaster.",
-        "howtorun": "Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed. If a player were to swap alignments after they are paired via June, they do not divorce, and they continue to be paired.",
+        "howtorun": "Before the game starts, announce that June is in-play. Once per game, 2 players may pair. If allies, they wake together, else, good can't win if both live & loses if the good player is executed. If a player were to swap alignments after they are paired via June, they do not divorce, and they continue to be paired.",
         "examples": [
             "Susie and Noelle are both on the good team, and wish to pair with one-another. Because they are both Allies, they wake with each other until the game ends, and can help coordinate with each others' abilities.",
             "Tenna and Spamton are both on the Evil team, and wish to pair with one-another. Because they are both Allies, they wake up with each other until the game ends, and help coordinate how to destroy those dirty Lightners.",
@@ -77,4 +100,5 @@
         "tip": "If there is a Poppy Grower or Magician on the Script, I'd recommend you Jinx them with August! The game will function overall better that way.",
         "firstNight": 13.5
     }
+
 ]
